@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="msMapper">
+    
+   	<resultMap id="BSResultSet" type="BookShare">
+		<id property="bsNo" column="BS_NO"/>
+		<result property="bsLocation" column="BS_LOCATION"/>
+		<result property="bsCategory" column="BS_CATEGORY"/>
+		<result property="bsTitle" column="BS_TITLE"/>
+		<result property="bsCon" column="BS_CON"/>
+		<result property="bsOriginalFileName" column="BS_ORGINAL_FILENAME"/>
+		<result property="bsRenameFileName" column="BS_RENAME_FILENAME"/>
+		<result property="bsWriter" column="BS_WRITER"/>
+		<result property="bsState" column="BS_STATE"/>
+		<result property="bsDate" column="BS_DATE"/>
+		<result property="bsType" column="BS_TYPE"/>
+		<result property="bsStatus" column="BS_STATUS"/>
+    </resultMap>
+    
+    <select id="selectBSList" resultMap="BSResultSet">
+    	SELECT	*
+   		FROM	BOOK_SHARE
+   		WHERE	1=1
+   		AND		BS_STATUS='Y'
+    </select>
+    
+    <select id="selectOne" parameterType="_int" resultMap="BSResultSet">
+    	SELECT	*
+    	FROM	BOOK_SHARE
+    	WHERE	1=1
+    	AND		BS_NO=#{bsNo}
+    	AND		BS_STATUS='Y'
+    </select>
+    
+    
+    
+</mapper>

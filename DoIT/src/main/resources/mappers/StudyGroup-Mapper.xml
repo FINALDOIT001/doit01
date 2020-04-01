@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="studyGroupMapper">
+
+	<resultMap id="studyGroupResultSet" type="StudyGroup">
+		<id property="sgNo" column="SG_NO"/>
+		<result property="sgTitle" column="SG_TITLE"/>
+		<result property="sgWriter" column="SG_WRITER"/>
+		<result property="sgMaxPeople" column="SG_MAXPEOPLE"/>
+		<result property="sgAddr" column="SG_ADDR" />
+		<result property="sgDeposit" column="SG_DEPOSIT"/>
+		<result property="sgCreateDate" column="SG_CREATE_DATE"/>
+		<result property="sgStartDate" column="SG_START_DATE" />
+		<result property="sgEndDate" column="SG_END_DATE"/>
+		<result property="sgLocation" column="SG_LOCATION" />
+		<result property="sgJoin" column="SG_JOIN_YN" />
+		<result property="sgCon" column="SG_CON" />
+		<result property="sgOrginalFileName" column="SG_ORGINAL_FILENAME" />
+		<result property="sgRenameFileName" column="SG_RENAME_FILENAME" />
+		<result property="sgTag" column="SG_TAG"/>
+		<result property="sgPayment" column="SG_PAYMENT_YN"/>
+		<result property="sgStatus" column="SG_STATUS_YN"/>
+			
+		
+	</resultMap>
+	
+	<select id="getlistCount" resultType="_int">
+	SELECT COUNT(*)
+	FROM STUDY_GROUP
+	WHERE SG_STATUS_YN='Y'
+	
+	</select>
+	
+	<select id="selectList" resultMap="studyGroupResultSet">
+	SELECT * FROM STUDY_GROUP
+	WHERE SG_STATUS_YN='Y'
+	ORDER BY SG_NO DESC
+	
+	</select>
+
+
+
+
+</mapper>
+    
+    
