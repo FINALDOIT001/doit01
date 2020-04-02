@@ -2,7 +2,7 @@ package com.kh.doit.study.model.service;
 
 import java.util.ArrayList;
 
-
+import com.kh.doit.study.model.vo.GroupMember;
 import com.kh.doit.study.model.vo.PageInfojung;
 import com.kh.doit.study.model.vo.StudyGroup;
 
@@ -28,6 +28,13 @@ public interface StudyGroupService {
 	 * @return
 	 */
 	StudyGroup selectSg(int sgNo);
+
+	/**
+	 * 참여자 조회
+	 * @param sgNo
+	 * @return
+	 */
+	ArrayList<GroupMember> selectGroupMember(int sgNo);
 
 	
 	

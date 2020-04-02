@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kh.doit.study.common.paginationJung;
 import com.kh.doit.study.model.service.StudyGroupService;
+import com.kh.doit.study.model.vo.GroupMember;
 import com.kh.doit.study.model.vo.PageInfojung;
 import com.kh.doit.study.model.vo.StudyGroup;
 
@@ -53,15 +54,31 @@ public class StudyGroupController {
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage) {
 
 		StudyGroup sg = sgService.selectSg(sgNo);
-
+		
+		ArrayList<GroupMember> gm = groupMember(sgNo);
+		
+		System.out.println("Controller gm : " + gm);
+		
 		if (sg != null) {
-			mv.addObject("sg", sg).addObject("currentPage", currentPage).setViewName("study/doitStudyDetail");
+			mv.addObject("sg", sg)
+			  .addObject("gm", gm)
+			  .addObject("currentPage", currentPage)
+			  .setViewName("study/doitStudyDetail");
 		} else {
 			mv.addObject("msg", "게시글 상세조회 실패").setViewName("common/errorPage");
 		}
 
 		return mv;
 	}
+	
+	public ArrayList<GroupMember> groupMember(int sgNo) {
+
+		ArrayList<GroupMember> sgList = sgService.selectGroupMember(sgNo);
+
+		return sgList;
+	}
+	
+	
 	
 	
 	

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kh.doit.study.model.dao.StudyGroupDao;
+import com.kh.doit.study.model.vo.GroupMember;
 import com.kh.doit.study.model.vo.PageInfojung;
 import com.kh.doit.study.model.vo.StudyGroup;
 
@@ -37,6 +38,12 @@ public class StudyGroupServiceImpl implements StudyGroupService {
 	@Override
 	public StudyGroup selectSg(int sgNo) {
 		return sgDao.selectSg(sgNo);
+	}
+
+
+	@Override
+	public ArrayList<GroupMember> selectGroupMember(int sgNo) {
+		return sgDao.selectGroupMember(sgNo);
 	}
 	
 	

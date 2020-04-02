@@ -91,18 +91,12 @@
 						<div class="checkuserscroll">
 
 							<ul class="checkuser">
+								<c:forEach var="g" items="${gm}" varStatus="vs" begin="0" end="5" step="1">
 								<li><div class="checkuserdiv">
 										<img src="${contextPath}/resources/img/client_2.png" class="rounded-circle "
-											style="height: 70px;" alt="Cinque Terre">박정호
+											style="height: 70px;" alt="Cinque Terre"><c:out value="${g.memberList[vs.index].mName}"/>
 									</div></li>
-								<li><div class="checkuserdiv">
-										<img src="${contextPath}/resources/img/client_1.png" class="rounded-circle "
-											style="height: 70px;" alt="Cinque Terre">케빈
-									</div></li>
-								<li><div class="checkuserdiv">
-										<img src="${contextPath}/resources/img/client/client_2.png" class="rounded-circle "
-											style="height: 70px;" alt="Cinque Terre">권구현
-									</div></li>
+								</c:forEach>
 							</ul>
 						</div>
 
