@@ -11,7 +11,7 @@ public class BookShare implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -7992551166162634184L;
+	private static final long serialVersionUID = 5095011919981484942L;
 	private int bsNo; 
 	private String bsLocation; //지역
 	private String bsCategory;

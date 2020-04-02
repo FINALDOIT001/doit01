@@ -19,6 +19,16 @@
 		<result property="bsStatus" column="BS_STATUS"/>
     </resultMap>
     
+    <resultMap id="BSReplyResultSet" type="BookShareReply">
+    	<id property="bscNo" column="BSC_NO"/>
+    	<result property="bscBsNo" column="BSC_BS_NO"/>
+    	<result property="bscWriter" column="BSC_WRITER"/>
+    	<result property="bscDate" column="BSC_DATE"/>
+    	<result property="bscCon" column="BSC_CON"/>
+    	<result property="bscStatus" column="BSC_STATUS"/>
+    	<collection property="bSResultSet" resultMap="BSResultSet"></collection>
+    </resultMap>
+    
     <select id="selectBSList" resultMap="BSResultSet">
     	SELECT	*
    		FROM	BOOK_SHARE
@@ -27,11 +37,26 @@
     </select>
     
     <select id="selectOne" parameterType="_int" resultMap="BSResultSet">
-    	SELECT	*
+    	SELECT	BSC_NO
     	FROM	BOOK_SHARE
     	WHERE	1=1
     	AND		BS_NO=#{bsNo}
     	AND		BS_STATUS='Y'
+    </select>
+    
+    <select id="selectBSReply" resultMap="BSReplyResultSet">
+    	SELECT	BSC_NO
+    			,C.BSC_BS_NO
+    			,C.BSC_WRITER
+    			,C.BSC_DATE
+    			,C.BSC_CON
+    			,C.BSC_STATUS
+ 		FROM	BOOK_SHARE_COMMENTS C
+ 		JOIN	BOOK_SHARE B
+ 		ON		C.BSC_BS_NO = B.BS_NO
+ 		WHERE	1=1
+ 		AND		C.BSC_BS_NO=#{bsNo}
+ 		AND		C.BSC_STATUS='Y'
     </select>
     
     

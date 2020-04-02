@@ -24,8 +24,9 @@ public class BookShareDao {
 	}
 
 	public ArrayList<BookShareReply> selectReplyList(int bsNo) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return (ArrayList)sqlSession.selectList("msMapper.selectBSReply", bsNo);
+
 	}
 
 }
