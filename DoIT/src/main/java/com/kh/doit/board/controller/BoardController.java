@@ -1,40 +1,27 @@
-package com.kh.doit.board.controller;
+package com.kh.doit.board.model.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.kh.doit.board.model.service.BoardService;
+import com.kh.doit.board.model.vo.PageInfo;
+import com.kh.doit.study.common.pagination;
 
 @Controller
 public class BoardController {
 	
-	@RequestMapping("moveFB.go")
-	public String moveFreeBoard() {
-		return "board/freeBoard_list";
+	@Autowired
+	private BoardService bService;
+	
+	@RequestMapping("bList.do")
+	public ModelAndView boardList(ModelAndView mv,@RequestParam(value="currentPage",required=false,defaultValue="1") int currentPage) {
+		
+		int listCount = bService.getListCount();
+		
+//		PageInfo pi = Pagination.getPageInfo(currentPage, listCount);
 	}
-	
-	@RequestMapping("fbView.go")
-	public String moveFreeBoardView() {
-		return "board/freeBoard_view";
-	}
-	
-	@RequestMapping("fbWrite.go")
-	public String moveFreeBoardWrite() {
-		return "board/freeBoard_write";
-	}
-	
-	@RequestMapping("moveNT.go")
-	public String moveNotice() {
-		return "board/notice_list";
-	}
-	
-	@RequestMapping("ntView.go")
-	public String moveNoticeView() {
-		return "board/notice_view";
-	}
-	
-	@RequestMapping("ntWrite.go")
-	public String moveNoticeWrite() {
-		return "board/notice_write";
-	}
-	
-	
+
 }

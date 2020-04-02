@@ -1,164 +1,138 @@
 package com.kh.doit.member.model.vo;
 
-import java.io.Serializable;
+
 import java.sql.Date;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class Member implements Serializable{
+public class Member{
+	private int mno; //번호
+	private String mId; //아이디
+	private String mPwd; //비밀번호
+	private String mName; //이름
+	private String mAddr; //주소
+	private String mPhone; //전화번호
+	private String mEmail; //이메일
+	private String mOrginalfilename; //원본 파일명
+	private String mRenamefilename; //바뀐 파일명
+	private Date mEnrolldate; //가입일
+	private Date mUpdatedate; //수정일
+	private int mUserroles; //탈퇴 여부
+	private String mStatus; // 
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 4689355522768787248L;
-	private int mId;
-	private String userId;
-	private String userPwd;
-	private String userName;
-	private int userPwdHintSelect;
-	private int userPwdHint2;
-	private String email;
-	private String phone;
-	private String address;
-	private Date mEnrollDate;
-	private Date mUdateDate;
-	private int userRoles;
-	private String mStatus;
-	
+	// 기본 생성자
 	public Member() {
+		super();
 	}
-
-	public Member(int mId, String userId, String userPwd, String userName, int userPwdHintSelect, int userPwdHint2,
-			String email, String phone, String address, Date mEnrollDate, Date mUdateDate, int userRoles,
+	// 매개변수 생성자
+	public Member(int mno, String mId, String mPwd, String mName, String mAddr, String mPhone, String mEmail,
+			String mOrginalfilename, String mRenamefilename, Date mEnrolldate, Date mUpdatedate, int mUserroles,
 			String mStatus) {
 		super();
+		this.mno = mno;
 		this.mId = mId;
-		this.userId = userId;
-		this.userPwd = userPwd;
-		this.userName = userName;
-		this.userPwdHintSelect = userPwdHintSelect;
-		this.userPwdHint2 = userPwdHint2;
-		this.email = email;
-		this.phone = phone;
-		this.address = address;
-		this.mEnrollDate = mEnrollDate;
-		this.mUdateDate = mUdateDate;
-		this.userRoles = userRoles;
+		this.mPwd = mPwd;
+		this.mName = mName;
+		this.mAddr = mAddr;
+		this.mPhone = mPhone;
+		this.mEmail = mEmail;
+		this.mOrginalfilename = mOrginalfilename;
+		this.mRenamefilename = mRenamefilename;
+		this.mEnrolldate = mEnrolldate;
+		this.mUpdatedate = mUpdatedate;
+		this.mUserroles = mUserroles;
 		this.mStatus = mStatus;
 	}
-
-	public int getmId() {
+	
+	// getter & setter
+	public int getMno() {
+		return mno;
+	}
+	public void setMno(int mno) {
+		this.mno = mno;
+	}
+	public String getmId() {
 		return mId;
 	}
-
-	public void setmId(int mId) {
+	public void setmId(String mId) {
 		this.mId = mId;
 	}
-
-	public String getUserId() {
-		return userId;
+	public String getmPwd() {
+		return mPwd;
 	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setmPwd(String mPwd) {
+		this.mPwd = mPwd;
 	}
-
-	public String getUserPwd() {
-		return userPwd;
+	public String getmName() {
+		return mName;
 	}
-
-	public void setUserPwd(String userPwd) {
-		this.userPwd = userPwd;
+	public void setmName(String mName) {
+		this.mName = mName;
 	}
-
-	public String getUserName() {
-		return userName;
+	public String getmAddr() {
+		return mAddr;
 	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setmAddr(String mAddr) {
+		this.mAddr = mAddr;
 	}
-
-	public int getUserPwdHintSelect() {
-		return userPwdHintSelect;
+	public String getmPhone() {
+		return mPhone;
 	}
-
-	public void setUserPwdHintSelect(int userPwdHintSelect) {
-		this.userPwdHintSelect = userPwdHintSelect;
+	public void setmPhone(String mPhone) {
+		this.mPhone = mPhone;
 	}
-
-	public int getUserPwdHint2() {
-		return userPwdHint2;
+	public String getmEmail() {
+		return mEmail;
 	}
-
-	public void setUserPwdHint2(int userPwdHint2) {
-		this.userPwdHint2 = userPwdHint2;
+	public void setmEmail(String mEmail) {
+		this.mEmail = mEmail;
 	}
-
-	public String getEmail() {
-		return email;
+	public String getmOrginalfilename() {
+		return mOrginalfilename;
 	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setmOrginalfilename(String mOrginalfilename) {
+		this.mOrginalfilename = mOrginalfilename;
 	}
-
-	public String getPhone() {
-		return phone;
+	public String getmRenamefilename() {
+		return mRenamefilename;
 	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setmRenamefilename(String mRenamefilename) {
+		this.mRenamefilename = mRenamefilename;
 	}
-
-	public String getAddress() {
-		return address;
+	public Date getmEnrolldate() {
+		return mEnrolldate;
 	}
-
-	public void setAddress(String address) {
-		this.address = address;
+	public void setmEnrolldate(Date mEnrolldate) {
+		this.mEnrolldate = mEnrolldate;
 	}
-
-	public Date getmEnrollDate() {
-		return mEnrollDate;
+	public Date getmUpdatedate() {
+		return mUpdatedate;
 	}
-
-	public void setmEnrollDate(Date mEnrollDate) {
-		this.mEnrollDate = mEnrollDate;
+	public void setmUpdatedate(Date mUpdatedate) {
+		this.mUpdatedate = mUpdatedate;
 	}
-
-	public Date getmUdateDate() {
-		return mUdateDate;
+	public int getmUserroles() {
+		return mUserroles;
 	}
-
-	public void setmUdateDate(Date mUdateDate) {
-		this.mUdateDate = mUdateDate;
+	public void setmUserroles(int mUserroles) {
+		this.mUserroles = mUserroles;
 	}
-
-	public int getUserRoles() {
-		return userRoles;
-	}
-
-	public void setUserRoles(int userRoles) {
-		this.userRoles = userRoles;
-	}
-
 	public String getmStatus() {
 		return mStatus;
 	}
-
 	public void setmStatus(String mStatus) {
 		this.mStatus = mStatus;
 	}
-
+	
+	// toString
 	@Override
 	public String toString() {
-		return "Member [mId=" + mId + ", userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName
-				+ ", userPwdHintSelect=" + userPwdHintSelect + ", userPwdHint2=" + userPwdHint2 + ", email=" + email
-				+ ", phone=" + phone + ", address=" + address + ", mEnrollDate=" + mEnrollDate + ", mUdateDate="
-				+ mUdateDate + ", userRoles=" + userRoles + ", mStatus=" + mStatus + "]";
+		return "Member [mno=" + mno + ", mId=" + mId + ", mPwd=" + mPwd + ", mName=" + mName + ", mAddr=" + mAddr
+				+ ", mPhone=" + mPhone + ", mEmail=" + mEmail + ", mOrginalfilename=" + mOrginalfilename
+				+ ", mRenamefilename=" + mRenamefilename + ", mEnrolldate=" + mEnrolldate + ", mUpdatedate="
+				+ mUpdatedate + ", mUserroles=" + mUserroles + ", mStatus=" + mStatus + "]";
 	}
-
+	
 	
 }
