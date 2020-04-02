@@ -13,5 +13,23 @@ public interface MemberService {
 	 */
 	int idCheck(String id);
 	
+
+	/**
+	 * 1. 회원가입
+	 * 2020.04.02 김혜림
+	 * @param m
+	 * @return
+	 */
+	int insertMember(Member m);
+
+
+	/**
+	 * 2. 로그인 기능
+	 * @param m
+	 * @return
+	 */
+	Member memberLogin(Member m);
+	
+	
 	
 }

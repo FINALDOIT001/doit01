@@ -20,15 +20,6 @@ public class CommonController {
 	
 	
 	
-	/** 정호 스터디 디테일 링크
-	 * @return
-	 */
-	@RequestMapping("studyDetail.go")
-	public String studyDetail() {
-		return "study/doitStudyDetail";
-	}
-	
-	
 	/** 정호 스터디 인설트폼 링크
 	 * @return
 	 */

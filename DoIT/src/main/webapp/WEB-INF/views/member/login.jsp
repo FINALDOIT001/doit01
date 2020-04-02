@@ -18,7 +18,6 @@
 	         <div class=" card o-hidden border-0 shadow-lg my-5" style="padding:50px; width:400px;">
 	           <div class="text-center">
 	            <h2 style="font-weight: 1000;">로그인</h2>
-	            				정규화 필요
 	           </div>
 	           <!-- 필수정보는 required 나중에 필수로 넣어줄 것! -->
 	           <form class="user" id="loginForm" action="login.me" method="post">
@@ -26,11 +25,11 @@
 	            </div>
 	               <div class="form-group">
 	                  <label>아이디</label>
-	                 <input type="text" class="form-control hide-on-focus" id="userId" name="userId" placeholder="아이디" required>
+	                 <input type="text" class="form-control hide-on-focus" id="userId" name="mId" placeholder="아이디" required>
 	            </div>
 	            <div class="form-group">
 	               <label>비밀번호</label>
-	               <input type="password" class="form-control form-control-user" id="userPwd" name="userPwd" placeholder="비밀번호" required>
+	               <input type="password" class="form-control form-control-user" id="userPwd" name="mPwd" placeholder="비밀번호" required>
 	            </div>
 	
 	            <!-- <a href="login.me" class="btn btn-dark btn-block" style="font-weight: 600;">

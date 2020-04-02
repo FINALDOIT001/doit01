@@ -36,5 +36,25 @@ public class StudyGroupDao {
 		return sqlSession.insert("studyGroupMapper.sgInsert", sg);
 	}
 
+	
+	/**
+	 * 작성자 : 서정도
+	 * @param sgNo
+	 * @return
+	 */
+	public StudyGroup selectSg(int sgNo) {
+		 
+		return sqlSession.selectOne("studyGroupMapper.selectSg", sgNo);
+	}
+
+	/**
+	 * 작성자 : 서정도
+	 * @param sgNo
+	 * @return
+	 */
+	public ArrayList<GroupMember> selectGroupMember(int sgNo) {
+		 
+		return (ArrayList)sqlSession.selectList("studyGroupMapper.groupMember",sgNo);
+	}
 
 }

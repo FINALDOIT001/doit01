@@ -26,6 +26,23 @@ public interface StudyGroupService {
 	int sgInsert(StudyGroup sg);
 	
 	
+	/**
+	 * 게시글 디테일 조회
+	 * 작성자 : 서정도
+	 * @param sgNo
+	 * @return
+	 */ 
+	StudyGroup selectSg(int sgNo);
+
+	/**
+	 * 참여자 조회
+	 * @param sgNo
+	 * @return
+	 */ 
+	ArrayList<GroupMember> selectGroupMember(int sgNo);
+
+	
+	
 	
 
 
