@@ -30,6 +30,15 @@ public class StudyGroupServiceImpl implements StudyGroupService {
 		return sgDao.selectList(pi);
 	}
 	
+
+	/**
+	 * 작성자 : 서정도
+	 */
+	@Override
+	public StudyGroup selectSg(int sgNo) {
+		return sgDao.selectSg(sgNo);
+	}
+	
 	
 
 }

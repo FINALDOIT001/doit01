@@ -29,5 +29,15 @@ public class StudyGroupDao {
 		return(ArrayList)sqlSession.selectList("studyGroupMapper.selectList",null,rowBound);
 	}
 
+	/**
+	 * 작성자 : 서정도
+	 * @param sgNo
+	 * @return
+	 */
+	public StudyGroup selectSg(int sgNo) {
+		
+		return sqlSession.selectOne("studyGroupMapper.selectSg", sgNo);
+	}
+
 
 }

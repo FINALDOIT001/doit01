@@ -39,5 +39,32 @@ public class StudyGroupController {
 
 		return mv;
 	}
+	
+	/**
+	 * 디테일
+	 * 작성자 : 서정도
+	 * @param mv
+	 * @param sgNo
+	 * @param currentPage
+	 * @return
+	 */
+	@RequestMapping("studyDetail.go")
+	public ModelAndView studyDetail(ModelAndView mv, int sgNo,
+			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage) {
+
+		StudyGroup sg = sgService.selectSg(sgNo);
+
+		if (sg != null) {
+			mv.addObject("sg", sg).addObject("currentPage", currentPage).setViewName("study/doitStudyDetail");
+		} else {
+			mv.addObject("msg", "게시글 상세조회 실패").setViewName("common/errorPage");
+		}
+
+		return mv;
+	}
+	
+	
+	
+	
 
 }
