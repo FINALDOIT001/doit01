@@ -25,7 +25,6 @@ public class BookShareServiceImpl implements BookShareService {
 	}
 	@Override
 	public ArrayList<BookShareReply> selectReplyList(int bsNo) {
-		System.out.println("권구현이 깃 테스트 해봅니다.");
 		return bsDao.selectReplyList(bsNo);
 	}
 	
