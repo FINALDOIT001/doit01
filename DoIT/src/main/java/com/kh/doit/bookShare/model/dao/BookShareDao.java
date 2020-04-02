@@ -24,10 +24,16 @@ public class BookShareDao {
 	}
 
 	public ArrayList<BookShareReply> selectReplyList(int bsNo) {
+<<<<<<< HEAD
 		System.out.println("다오 bsNo : " + bsNo);
 		ArrayList<BookShareReply> list = (ArrayList)sqlSession.selectList("msMapper.selectBSReply", bsNo);
 		System.out.println("Dao 댓글리스트 : " + list);
 		return list;
+=======
+
+		return (ArrayList)sqlSession.selectList("msMapper.selectBSReply", bsNo);
+
+>>>>>>> branch 'master' of https://github.com/FINALDOIT001/doit01.git
 	}
 
 }

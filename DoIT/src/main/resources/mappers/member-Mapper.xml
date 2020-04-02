@@ -25,12 +25,10 @@
     	WHERE M_ID=#{mId}
     </select> 
     
-    <select id="memberLogin" parameterType="Member" resultMap="memberResultSet">
-    	SELECT	*
-   		FROM	MEMBER
-   		WHERE	M_ID=#{mId}
-   		AND		M_PWD=#{mPwd}
-   		<!-- AND		M_STATUS='Y' -->
-    </select>
-    
+
+    <insert id="insertMember" parameterType="Member">
+    	INSERT INTO MEMBER 
+    	VALUES (SEQ_MNO.NEXTVAL,#{mId}, #{mPwd}, #{mName}, #{mAddr}, #{mPhone}, 
+    			#{mEmail}, default, default, SYSDATE, SYSDATE, default, default)
+    </insert>
 </mapper>
