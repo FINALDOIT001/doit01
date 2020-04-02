@@ -1,6 +1,8 @@
 package com.kh.doit.study.model.dao;
 
+import java.sql.Date;
 import java.util.ArrayList;
+
 
 import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -27,6 +29,11 @@ public class StudyGroupDao {
 		RowBounds rowBound = new RowBounds(offset,pi.getBoardLimit());
 		
 		return(ArrayList)sqlSession.selectList("studyGroupMapper.selectList",null,rowBound);
+	}
+
+	public int sgInsert(StudyGroup sg) {
+		
+		return sqlSession.insert("studyGroupMapper.sgInsert", sg);
 	}
 
 

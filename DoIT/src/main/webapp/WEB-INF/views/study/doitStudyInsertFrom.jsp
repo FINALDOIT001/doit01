@@ -41,14 +41,14 @@
 	<section class="about_part section-padding">
 		<div class="container">
 		<form action="sgInsert.go" method="post"
-							enctype="multipart/form-date" class="was-validated">
+							enctype="multipart/form-data" class="was-validated">
 			<div class="row">
 				<div class="col-lg-6 col-md-6">
 
 
 					<div class="filebox">
 						<label for="cma_file" class="rounded"> <input type="file"
-							name="cma_file" id="cma_file" accept="image/*" capture="camera"
+							name="sibal" id="cma_file" accept="image/*" capture="camera"
 							onchange="getThumbnailPrivew(this,$('#cma_image'))" />
 							<div id="cma_image"></div>
 						</label>
@@ -63,11 +63,11 @@
 							<div class="row">
 								<div class="col">
 									<input type="text" class="form-control" placeholder="공부방 제목 입력"
-										name="studytitle" required>
+										name="sgTitle" required>
 									<div class="valid-feedback">Valid.</div>
 									<div class="invalid-feedback">공부방 제목 입역</div>
 									<input type="text" class="form-control" vlaue="니돈먹튀"
-										name="userId" hidden>
+										name="sgWriter" hidden>
 									<!-- 방 개설 자 아이디 자동 입력 구간-->
 								</div>
 							</div>
@@ -77,13 +77,13 @@
 							<div class="row">
 								<div class="col">
 									<input type="text" id="from" class="form-control"
-										placeholder="시작 날짜 설정" name="startDate" required>
+										placeholder="시작 날짜 설정" name="sgStartDate" required>
 									<div class="valid-feedback">Valid.</div>
 									<div class="invalid-feedback">시작 기간 설정</div>
 								</div>
 								<div class="col">
 									<input type="text" id="to" class="form-control"
-										placeholder="종료 날짜 설정" name="endDate" required>
+										placeholder="종료 날짜 설정" name="sgEndDate" required>
 									<div class="valid-feedback">Valid.</div>
 									<div class="invalid-feedback">종료 기간 설정</div>
 								</div>
@@ -93,13 +93,13 @@
 							<div class="row">
 								<div class="col">
 									<input type="text" class="form-control" placeholder="지역 입력"
-										name="city" required>
+										name="sgAddr" required>
 									<div class="valid-feedback">Valid.</div>
 									<div class="invalid-feedback">지역입력 예) 서울</div>
 								</div>
 								<div class="col">
 									<input type="text" class="form-control" placeholder="장소 입력"
-										name="place" required>
+										name="sgLocation" required>
 									<div class="valid-feedback">Valid.</div>
 									<div class="invalid-feedback">장소입력 예) xxx커피집</div>
 								</div>
@@ -109,13 +109,13 @@
 							<div class="row">
 								<div class="col">
 									<input type="number" min="0" class="form-control"
-										placeholder="보증금 입력" name="city" required>
+										placeholder="보증금 입력" name="sgDeposit" required>
 									<div class="valid-feedback">Valid.</div>
 									<div class="invalid-feedback">인당 보증급 설정</div>
 								</div>
 								<div class="col">
 									<input type="number" min="1" class="form-control"
-										placeholder="모집 인원" name="pcount" required>
+										placeholder="모집 인원" name="sgMaxPeople" required>
 									<div class="valid-feedback">Valid.</div>
 									<div class="invalid-feedback">모집 인원 설정</div>
 								</div>
@@ -124,7 +124,7 @@
 							<div class="row">
 								<div class="col">
 									<input type="text" id="teg" class="form-control"
-										placeholder="검색어 등록" name="teg" required>
+										placeholder="검색어 등록" name="sgTag" required>
 									<div class="valid-feedback">Valid.</div>
 									<div class="invalid-feedback">검색어 입력 예) @JAVA</div>
 								</div>
@@ -133,7 +133,7 @@
 
 							<div class="form-group form-check">
 								<label class="form-check-label"> <input
-									class="form-check-input" type="checkbox" name="remember"
+									class="form-check-input" type="checkbox" name="sgJoin"
 									required> 수업 중간 참여 가능 여부 체크 해주세요.
 									<div class="valid-feedback">Valid.</div>
 									<div class="invalid-feedback">필수</div>
@@ -147,7 +147,7 @@
 				style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
 				<h2>About Study</h2>
 			</div>
-			<div id="summernote"></div>
+			<div id="summernote" name="sgCon"></div>
 			<br>
 			<div style="text-align: center; margin-top: 20px;">
 

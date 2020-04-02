@@ -40,6 +40,13 @@
 	ORDER BY SG_NO DESC
 	
 	</select>
+	
+	<insert id="sgInsert" parameterType="StudyGroup">
+	INSERT INTO STUDY_GROUP
+	VALUES(SEQ_SGNO.NEXTVAL,#{sgTitle},#{sgWriter},#{sgMaxPeople},#{sgAddr},#{sgDeposit},SYSDATE,
+	#{sgStartDate},#{sgEndDate},#{sgLocation},#{sgJoin},#{sgCon},#{sgOrginalFileName},#{sgRenameFileName},
+	#{sgTag},#{sgPayment},'Y')
+	</insert>
 
 
 

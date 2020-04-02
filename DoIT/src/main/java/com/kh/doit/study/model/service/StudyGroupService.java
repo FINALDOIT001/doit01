@@ -18,6 +18,12 @@ public interface StudyGroupService {
 	 * @return
 	 */
 	ArrayList<StudyGroup> selectList(PageInfojung pi);
+
+	/**학생 그룹 리스트 인설트
+	 * @param sg
+	 * @return
+	 */
+	int sgInsert(StudyGroup sg);
 	
 	
 	

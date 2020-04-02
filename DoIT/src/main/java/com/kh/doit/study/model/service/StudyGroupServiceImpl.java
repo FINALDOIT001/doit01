@@ -1,6 +1,7 @@
 package com.kh.doit.study.model.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,14 @@ public class StudyGroupServiceImpl implements StudyGroupService {
 	public ArrayList<StudyGroup> selectList(PageInfojung pi) {
 		
 		return sgDao.selectList(pi);
+	}
+
+
+
+	@Override
+	public int sgInsert(StudyGroup sg) {
+		// TODO Auto-generated method stub
+		return sgDao.sgInsert(sg);
 	}
 	
 	
