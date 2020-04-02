@@ -16,27 +16,14 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	SqlSessionTemplate sqlSession;
 
+	
+	
 	@Override
-	public int memberJoin(Member m) {
+	public int idCheck(String id) {
 		
-		System.out.println("Service member : " + m);
-		
-		return 0;
+		return mDao.idCheck(id);
 	}
 
-	
-	
-	@Override
-	public Member memberLogin(Member m) {
-		
-		System.out.println("Service member : " + m);
-		
-		Member loginUser = mDao.loginMember(m);
-		
-		System.out.println("Service 로그인 member : " + loginUser);
-		
-		return loginUser;
-	}
 	
 	
 

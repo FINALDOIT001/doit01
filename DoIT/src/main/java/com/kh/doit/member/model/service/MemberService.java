@@ -4,27 +4,14 @@ import com.kh.doit.member.model.vo.Member;
 
 
 public interface MemberService {
-	
-	
-	
-	// 1-1 아이디중복확인 필요
-	
-	
-	
+
 	/**
-	 * 1-2. 회원가입
-	 * 2020.03.22 Kwon
-	 * @param m
+	 * 1. 아이디 중복 체크
+	 * 2020.04.01 김혜림 
+	 * @param id
 	 * @return
 	 */
-	int memberJoin(Member m);
+	int idCheck(String id);
 	
-	/**
-	 * 2. 로그인
-	 * 2020.03.22 Kwon
-	 * @param m
-	 * @return
-	 */
-	Member memberLogin(Member m);
 	
 }
