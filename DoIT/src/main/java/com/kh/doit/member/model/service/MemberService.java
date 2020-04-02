@@ -12,6 +12,13 @@ public interface MemberService {
 	 * @return
 	 */
 	int idCheck(String id);
+
+	/**
+	 * 2. 로그인 기능
+	 * @param m
+	 * @return
+	 */
+	Member memberLogin(Member m);
 	
 	
 }
