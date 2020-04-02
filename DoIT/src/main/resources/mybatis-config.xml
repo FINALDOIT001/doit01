@@ -12,8 +12,10 @@
 		<typeAlias type="com.kh.doit.member.model.vo.Member" alias="Member"/>
 		<typeAlias type="com.kh.doit.study.model.vo.StudyGroup" alias="StudyGroup"/>
 		<typeAlias type="com.kh.doit.bookShare.model.vo.BookShare" alias="BookShare"/>
+		<typeAlias type="com.kh.doit.board.model.vo.Board" alias="Board"/>
 		<typeAlias type="com.kh.doit.bookShare.model.vo.BookShareReply" alias="BookShareReply"/>
 		<typeAlias type="com.kh.doit.study.model.vo.GroupMember" alias="GroupMember"/>
+
 	</typeAliases>
 	
 	<!-- DB정보를 썼던 부분 
@@ -28,6 +30,7 @@
 		<mapper resource="mappers/member-Mapper.xml"/>
 		<mapper resource="mappers/StudyGroup-Mapper.xml"/>
 		<mapper resource="mappers/bs-mapper.xml"/>
+		<mapper resource="mappers/board-Mapper.xml"/>
 	</mappers>
 	
 </configuration>

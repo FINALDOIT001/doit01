@@ -41,56 +41,49 @@
                 <thead>
                   <tr>
                     <th>번호</th>
-                    <th>제목</th>
                     <th>작성자</th>
+                    <th>제목</th>
                     <th>작성일</th>
                     <th>조회수</th>
                   </tr>
                 </thead>
+                <c:forEach var="b" items="${ list }">
                 <tbody>
                   <tr>
-                    <td>5</td>
-                    <td>hyunzzang</td>
-                    <td><a href="fbView.go">스터디 어떤가요??</a></td>
-                    <td>2020-03-15</td>
-                    <td>10</td>
-                  </tr>
-                  <tr>
-                      <td>4</td>
-                      <td>studysiru</td>
-                      <td>자바관련 질문이요~~</td>
-                      <td>2020-03-13</td>
-                      <td>8</td>
-                  </tr>
-                  <tr>
-                      <td>3</td>
-                      <td>javaman</td>
-                      <td>취업 어떻게 하나요..</td>
-                      <td>2020-03-12</td>
-                      <td>76</td>
-                  </tr>							
-                  <tr>
-                      <td>2</td>
-                      <td>doglove</td>
-                      <td>요새 날씨가 좋아요</td>
-                      <td>2020-03-04</td>
-                      <td>32</td>
-                  </tr>							
-                  <tr>
-                      <td>1</td>
-                      <td>choconuna</td>
-                      <td>ㅇㅇ스터디 괜찮네요</td>
-                      <td>2020-03-01</td>
-                      <td>5</td>
+                  	<td align="center">${ b.b_no }</td>
+                  	<td align="left">
+                  		<c:if test="${ !empty loginUser }">
+                  			<c:url var="fbDetail" value="fbDetail.go">
+                  				<c:param name="b_no" value="${ b.b_no }"></c:param>
+                  				<c:param name="currentPage" value="${ pi_h.currentPage }"></c:param>
+                  			</c:url>
+                  			<a href="${ fbDetail }">${ b.b_title }</a>
+                  		</c:if>
+                  		<c:if test="${ empty loginUser }">
+                  			${ b.b_title }
+                  		</c:if>
+                  	</td>
+                  	<td align="center">${ b.b_writer }</td>
+                  	<td align="center">${ b.b_createdate }</td>
+                  	<td align="center">${ b.b_count }</td>
+                  	<td align="center">
+                  		<c:if test="${ !empty b.b_org_filename }">
+                  			○
+                  		</c:if>
+                  		<c:if test="${ b.b_org_filename }">
+                  			&nbsp;
+                         		</c:if>
+                  	</td>
                   </tr>
                 </tbody>
+                </c:forEach>
               </table>
             </div>
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
           <div class="col-md-12" style="text-align: right; margin-top: 20px;">
-            <a href="fbWrite.go" class="genric-btn danger circle" style="font-size: 13px;">작성하기</a>
+            <button onclick="location.href='fbInsertForm.go';" class="genric-btn danger circle" style="font-size: 13px;">작성하기</button>
         </div>
     </div>
 

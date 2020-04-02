@@ -24,7 +24,9 @@ public class BookShareDao {
 	}
 
 	public ArrayList<BookShareReply> selectReplyList(int bsNo) {
+
 		return (ArrayList)sqlSession.selectList("msMapper.selectBSReply", bsNo);
+
 	}
 
 }
