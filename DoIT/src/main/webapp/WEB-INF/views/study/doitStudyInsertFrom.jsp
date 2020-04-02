@@ -7,33 +7,41 @@
 <meta charset="UTF-8">
 
 <link rel="stylesheet" href="${contextPath}/resources/css/jungho.css">
-<script src="${contextPath}/resources/js/jungho.js">
-	
-</script>
+<script src="${contextPath}/resources/js/jungho.js"></script>
 
 
 <!-- Datepicker 사용 css 건들지마 혼나 -->
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-<!-- summernote 사용 건들지마 혼나 -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-	crossorigin="anonymous"></script>
+
+<!-- 썸머노트 -->
+
 <link
 	href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.css"
 	rel="stylesheet">
-<script
-	src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.js"></script>
 
-<script type="text/javascript"
-	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=YOUR_CLIENT_ID"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-lite.min.js"></script>
+
+
+
+</head>
+	
+
 <body>
 
 
 	<jsp:include page="../common/header.jsp" />
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+	crossorigin="anonymous"></script>
+	<script
+	src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.js"></script>
+	
+	
+	
+	
+	
 
 
 
@@ -48,7 +56,7 @@
 
 					<div class="filebox">
 						<label for="cma_file" class="rounded"> <input type="file"
-							name="sibal" id="cma_file" accept="image/*" capture="camera"
+							name="sbul" id="cma_file" accept="image/*" capture="camera"
 							onchange="getThumbnailPrivew(this,$('#cma_image'))" />
 							<div id="cma_image"></div>
 						</label>
@@ -134,9 +142,9 @@
 							<div class="form-group form-check">
 								<label class="form-check-label"> <input
 									class="form-check-input" type="checkbox" name="sgJoin"
-									required> 수업 중간 참여 가능 여부 체크 해주세요.
-									<div class="valid-feedback">Valid.</div>
-									<div class="invalid-feedback">필수</div>
+									> 수업 중간 참여 가능 여부 체크 해주세요.
+									<div class="valid-feedback">중간참여 가능여부 체크 필요</div>
+									
 								</label>
 							</div>
 					</div>
@@ -147,7 +155,7 @@
 				style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
 				<h2>About Study</h2>
 			</div>
-			<div id="summernote" name="sgCon"></div>
+			<textarea id="summernote" name="sgCon"></textarea>
 			<br>
 			<div style="text-align: center; margin-top: 20px;">
 
@@ -159,9 +167,6 @@
 			</form>
 		</div>
 	</section>
-
-
-
 	<script>
 		$('#summernote').summernote(
 				{
@@ -178,20 +183,34 @@
 
 		var markupStr = $('#summernote').summernote('code');
 	</script>
+	
+	
 
+
+	
 
 	<jsp:include page="../common/footer.jsp" />
+	
+	
 
 
 
 	<!-- datapicker 건들지마 진짜 혼나 -->
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+	
+	
+	
+	
+	
 
 
 	<script>
 		$(function() {
-			var dateFormat = "mm/dd/yy", from = $("#from").datepicker({
+			var dateFormat = "yy-mm-dd",
+			from = $("#from").datepicker({
+				dateFormat: dateFormat,
 				minDate : 0,
 				defaultDate : "+1w",
 				changeMonth : true,
@@ -199,6 +218,7 @@
 			}).on("change", function() {
 				to.datepicker("option", "minDate", getDate(this));
 			}), to = $("#to").datepicker({
+				dateFormat: dateFormat,
 				defaultDate : "+1w",
 				changeMonth : true,
 

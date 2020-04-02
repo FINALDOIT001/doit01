@@ -2,7 +2,7 @@ package com.kh.doit.study.model.service;
 
 import java.util.ArrayList;
 
-
+import com.kh.doit.study.model.vo.GroupMember;
 import com.kh.doit.study.model.vo.PageInfojung;
 import com.kh.doit.study.model.vo.StudyGroup;
 

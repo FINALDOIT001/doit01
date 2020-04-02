@@ -9,9 +9,8 @@
 
 <link rel="stylesheet" href="${contextPath}/resources/css/jungho.css">
 <link rel="stylesheet" href="${contextPath}/resources/css/hyerim.css">
-<script src="${contextPath}/resources/js/jungho.js">
+<script src="${contextPath}/resources/js/jungho.js"></script>
 	
-</script>
 
 </head>
 
@@ -103,12 +102,26 @@
 						<!-- study list start -->
 
 						<c:forEach var="sg" items="${sgList}">
-
-							<div class="col-md-2" style="text-align: center;">
-								<img src="${contextPath}/resources/img/${sg.sgRenameFileName}"
+						
+						<c:if test="${!empty sg.sgRenameFileName}">
+						
+						<div class="col-md-2" style="text-align: center;">
+								<img src="${contextPath}/resources/sgloadFiles/${sg.sgRenameFileName}"
 									class="rounded" alt="Cinque Terre"
 									style="width: 90px; height: 90px;">
-							</div>
+						</div>
+						</c:if>
+						
+						<c:if test="${empty sg.sgRenameFileName}">
+						
+						<div class="col-md-2" style="text-align: center;">
+								<img src="${contextPath}/resources/img/project-5.png"
+									class="rounded" alt="Cinque Terre"
+									style="width: 90px; height: 90px;">
+						</div>
+						</c:if>
+						
+							
 							<div class="col-md-9 mt-sm-20">
 								<c:url var="sgDetail" value="studyDetail.go">
 									<c:param name="sgNo" value="${sg.sgNo}" />

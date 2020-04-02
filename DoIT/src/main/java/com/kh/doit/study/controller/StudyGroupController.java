@@ -1,16 +1,14 @@
 package com.kh.doit.study.controller;
 
 import java.io.File;
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-import javax.annotation.sql.DataSourceDefinition;
-import javax.annotation.sql.DataSourceDefinitions;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kh.doit.study.common.paginationJung;
 import com.kh.doit.study.model.service.StudyGroupService;
+import com.kh.doit.study.model.vo.GroupMember;
 import com.kh.doit.study.model.vo.PageInfojung;
 import com.kh.doit.study.model.vo.StudyGroup;
 
@@ -52,10 +51,19 @@ public class StudyGroupController {
 	
 	@RequestMapping("sgInsert.go")
 	public String sgInsert(StudyGroup sg, HttpServletRequest request,
-				@RequestParam(name="sibal", required=false)MultipartFile file) {
+				@RequestParam(name="sbul", required=false)MultipartFile file) {
+				
+				
+		String join = sg.getSgJoin();
 		
-	
+		if(join==null) {
+			sg.setSgJoin("N");
+			
+		}else {
+			sg.setSgJoin("Y");
+		}
 		
+		System.out.println(sg.getSgJoin());
 		System.out.println("사진 : " + file.getOriginalFilename());
 		
 		
@@ -78,22 +86,27 @@ public class StudyGroupController {
 				  return "common/errorPage";
 		
 	}
-		  
 	}
+		  
+		  
 	public String saveFile(MultipartFile file, HttpServletRequest request) {
 		
 		String root = request.getSession().getServletContext().getRealPath("resources");
-		File folder = new File(root+"\\sgloadFiles");
+		
+		
+		String savePath = root + "\\sgloadFiles";
+		File folder = new File(savePath);
 		
 		if(!folder.exists()) {
 			folder.mkdir();
 		}
 		String originFileName = file.getOriginalFilename();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-		String renameFileName = sdf.format(new java.sql.Date(System.currentTimeMillis()))
+		String renameFileName = sdf.format(new java.sql.Date(System.currentTimeMillis()))+"."
 				+ originFileName.substring(originFileName.lastIndexOf(".")+1);
 		
 		String renamePath = folder + "\\" +renameFileName;
+		System.out.println(renamePath);
 		
 		try {
 			

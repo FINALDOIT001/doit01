@@ -16,8 +16,8 @@ public class StudyGroup {
 	private String sgAddr;
 	private String sgDeposit;
 	private Date sgCreateDate;
-	private Date sgStartDate;
-	private Date sgEndDate;
+	private String sgStartDate;
+	private String sgEndDate;
 	private String sgLocation;
 	private String sgJoin;
 	private String sgCon;
@@ -32,7 +32,7 @@ public class StudyGroup {
 	}
 
 	public StudyGroup(int sgNo, String sgTitle, String sgWriter, int sgMaxPeople, String sgAddr, String sgDeposit,
-			Date sgCreateDate, Date sgStartDate, Date sgEndDate, String sgLocation, String sgJoin, String sgCon,
+			Date sgCreateDate, String sgStartDate, String sgEndDate, String sgLocation, String sgJoin, String sgCon,
 			String sgOrginalFileName, String sgRenameFileName, String sgTag, String sgPayment, String sgStatus) {
 		super();
 		this.sgNo = sgNo;
@@ -110,19 +110,19 @@ public class StudyGroup {
 		this.sgCreateDate = sgCreateDate;
 	}
 
-	public Date getSgStartDate() {
+	public String getSgStartDate() {
 		return sgStartDate;
 	}
 
-	public void setSgStartDate(Date sgStartDate) {
+	public void setSgStartDate(String sgStartDate) {
 		this.sgStartDate = sgStartDate;
 	}
 
-	public Date getSgEndDate() {
+	public String getSgEndDate() {
 		return sgEndDate;
 	}
 
-	public void setSgEndDate(Date sgEndDate) {
+	public void setSgEndDate(String sgEndDate) {
 		this.sgEndDate = sgEndDate;
 	}
 

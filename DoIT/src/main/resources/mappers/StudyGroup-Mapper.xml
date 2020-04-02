@@ -69,11 +69,15 @@
 	</select>
 	
 	<insert id="sgInsert" parameterType="StudyGroup">
+	
 	INSERT INTO STUDY_GROUP
 	VALUES(SEQ_SGNO.NEXTVAL,#{sgTitle},#{sgWriter},#{sgMaxPeople},#{sgAddr},#{sgDeposit},SYSDATE,
 	#{sgStartDate},#{sgEndDate},#{sgLocation},#{sgJoin},#{sgCon},#{sgOrginalFileName},#{sgRenameFileName},
-	#{sgTag},#{sgPayment},'Y')
+	#{sgTag},DEFAULT,DEFAULT)
+	
 	</insert>
+	
+	
 	<select id="groupMember" resultMap="groupMemberResultSet">
 		SELECT M.M_NAME, M.M_ORGINAL_FILENAME
 		FROM GROUP_MEMBER GM
