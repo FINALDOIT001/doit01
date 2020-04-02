@@ -6,8 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kh.doit.study.model.dao.StudyGroupDao;
-import com.kh.doit.study.model.vo.GroupMember;
-import com.kh.doit.study.model.vo.PageInfojung;
+import com.kh.doit.study.model.vo.PageInfo;
 import com.kh.doit.study.model.vo.StudyGroup;
 
 @Service("sgService")
@@ -26,24 +25,9 @@ public class StudyGroupServiceImpl implements StudyGroupService {
 
 
 	@Override
-	public ArrayList<StudyGroup> selectList(PageInfojung pi) {
+	public ArrayList<StudyGroup> selectList(PageInfo pi) {
 		
 		return sgDao.selectList(pi);
-	}
-	
-
-	/**
-	 * 작성자 : 서정도
-	 */
-	@Override
-	public StudyGroup selectSg(int sgNo) {
-		return sgDao.selectSg(sgNo);
-	}
-
-
-	@Override
-	public ArrayList<GroupMember> selectGroupMember(int sgNo) {
-		return sgDao.selectGroupMember(sgNo);
 	}
 	
 	

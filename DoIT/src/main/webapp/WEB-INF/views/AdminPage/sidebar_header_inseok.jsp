@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,7 +64,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-            <a class="collapse-item" href="buttons.html">회원 정보 조회</a>
+            <a class="collapse-item" href="AdMemMani.ad">회원 정보 조회</a>
             <!-- <a class="collapse-item" href="cards.html">Cards</a> -->
           </div>
         </div>
@@ -78,7 +79,7 @@
         <div id="collapseUtilities1" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
-            <a class="collapse-item" href="utilities-color.html">보증금 관리</a>
+            <a class="collapse-item" href="AdDepositeManager.ad">보증금 관리</a>
           </div>
         </div>
       </li>
@@ -92,10 +93,10 @@
         <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
-            <a class="collapse-item" href="utilities-color.html">공지사항</a>
-            <a class="collapse-item" href="utilities-color.html">자유게시판</a>
-            <a class="collapse-item" href="utilities-color.html">행사게시판</a>
-            <a class="collapse-item" href="utilities-color.html">Q & A</a>
+            <a class="collapse-item" href="AdBNotice.ad">공지사항</a>
+            <a class="collapse-item" href="AdBFree.ad">자유게시판</a>
+<!--        <a class="collapse-item" href="utilities-color.html">행사게시판</a> -->
+            <a class="collapse-item" href="AdBQnA.ad">Q & A</a>
           </div>
         </div>
       </li>

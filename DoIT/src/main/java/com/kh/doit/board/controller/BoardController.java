@@ -21,8 +21,6 @@ public class BoardController {
       return "board/freeBoard_write";
    }
    
-   
-   
    @RequestMapping("moveNT.go")
    public String moveNotice() {
       return "board/notice_list";

@@ -20,6 +20,7 @@ public class Member{
 	private Date mUpdatedate; //수정일
 	private int mUserroles; //탈퇴 여부
 	private String mStatus; // 
+	 
 	
 	// 기본 생성자
 	public Member() {

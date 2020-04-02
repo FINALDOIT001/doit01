@@ -14,7 +14,7 @@ public class StudyGroup {
 	private String sgWriter;
 	private int sgMaxPeople;
 	private String sgAddr;
-	private String sgDeposit;
+	private int sgDeposit;
 	private Date sgCreateDate;
 	private Date sgStartDate;
 	private Date sgEndDate;
@@ -30,8 +30,7 @@ public class StudyGroup {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public StudyGroup(int sgNo, String sgTitle, String sgWriter, int sgMaxPeople, String sgAddr, String sgDeposit,
+	public StudyGroup(int sgNo, String sgTitle, String sgWriter, int sgMaxPeople, String sgAddr, int sgDeposit,
 			Date sgCreateDate, Date sgStartDate, Date sgEndDate, String sgLocation, String sgJoin, String sgCon,
 			String sgOrginalFileName, String sgRenameFileName, String sgTag, String sgPayment, String sgStatus) {
 		super();
@@ -53,143 +52,108 @@ public class StudyGroup {
 		this.sgPayment = sgPayment;
 		this.sgStatus = sgStatus;
 	}
-
 	public int getSgNo() {
 		return sgNo;
 	}
-
 	public void setSgNo(int sgNo) {
 		this.sgNo = sgNo;
 	}
-
 	public String getSgTitle() {
 		return sgTitle;
 	}
-
 	public void setSgTitle(String sgTitle) {
 		this.sgTitle = sgTitle;
 	}
-
 	public String getSgWriter() {
 		return sgWriter;
 	}
-
 	public void setSgWriter(String sgWriter) {
 		this.sgWriter = sgWriter;
 	}
-
 	public int getSgMaxPeople() {
 		return sgMaxPeople;
 	}
-
 	public void setSgMaxPeople(int sgMaxPeople) {
 		this.sgMaxPeople = sgMaxPeople;
 	}
-
 	public String getSgAddr() {
 		return sgAddr;
 	}
-
 	public void setSgAddr(String sgAddr) {
 		this.sgAddr = sgAddr;
 	}
-
-	public String getSgDeposit() {
+	public int getSgDeposit() {
 		return sgDeposit;
 	}
-
-	public void setSgDeposit(String sgDeposit) {
+	public void setSgDeposit(int sgDeposit) {
 		this.sgDeposit = sgDeposit;
 	}
-
 	public Date getSgCreateDate() {
 		return sgCreateDate;
 	}
-
 	public void setSgCreateDate(Date sgCreateDate) {
 		this.sgCreateDate = sgCreateDate;
 	}
-
 	public Date getSgStartDate() {
 		return sgStartDate;
 	}
-
 	public void setSgStartDate(Date sgStartDate) {
 		this.sgStartDate = sgStartDate;
 	}
-
 	public Date getSgEndDate() {
 		return sgEndDate;
 	}
-
 	public void setSgEndDate(Date sgEndDate) {
 		this.sgEndDate = sgEndDate;
 	}
-
 	public String getSgLocation() {
 		return sgLocation;
 	}
-
 	public void setSgLocation(String sgLocation) {
 		this.sgLocation = sgLocation;
 	}
-
 	public String getSgJoin() {
 		return sgJoin;
 	}
-
 	public void setSgJoin(String sgJoin) {
 		this.sgJoin = sgJoin;
 	}
-
 	public String getSgCon() {
 		return sgCon;
 	}
-
 	public void setSgCon(String sgCon) {
 		this.sgCon = sgCon;
 	}
-
 	public String getSgOrginalFileName() {
 		return sgOrginalFileName;
 	}
-
 	public void setSgOrginalFileName(String sgOrginalFileName) {
 		this.sgOrginalFileName = sgOrginalFileName;
 	}
-
 	public String getSgRenameFileName() {
 		return sgRenameFileName;
 	}
-
 	public void setSgRenameFileName(String sgRenameFileName) {
 		this.sgRenameFileName = sgRenameFileName;
 	}
-
 	public String getSgTag() {
 		return sgTag;
 	}
-
 	public void setSgTag(String sgTag) {
 		this.sgTag = sgTag;
 	}
-
 	public String getSgPayment() {
 		return sgPayment;
 	}
-
 	public void setSgPayment(String sgPayment) {
 		this.sgPayment = sgPayment;
 	}
-
 	public String getSgStatus() {
 		return sgStatus;
 	}
-
 	public void setSgStatus(String sgStatus) {
 		this.sgStatus = sgStatus;
 	}
-
 	@Override
 	public String toString() {
 		return "StudyGroup [sgNo=" + sgNo + ", sgTitle=" + sgTitle + ", sgWriter=" + sgWriter + ", sgMaxPeople="
@@ -199,7 +163,7 @@ public class StudyGroup {
 				+ ", sgRenameFileName=" + sgRenameFileName + ", sgTag=" + sgTag + ", sgPayment=" + sgPayment
 				+ ", sgStatus=" + sgStatus + "]";
 	}
-	
+
 	
 }
 	
