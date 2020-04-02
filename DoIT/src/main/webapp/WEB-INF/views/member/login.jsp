@@ -18,7 +18,6 @@
 	         <div class=" card o-hidden border-0 shadow-lg my-5" style="padding:50px; width:400px;">
 	           <div class="text-center">
 	            <h2 style="font-weight: 1000;">로그인</h2>
-	            				정규화 필요
 	           </div>
 	           <!-- 필수정보는 required 나중에 필수로 넣어줄 것! -->
 	           <form class="user" id="loginForm" action="login.me" method="post">
