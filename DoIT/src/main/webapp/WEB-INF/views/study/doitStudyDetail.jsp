@@ -91,10 +91,10 @@
 						<div class="checkuserscroll">
 
 							<ul class="checkuser">
-								<c:forEach var="g" items="${gm}" varStatus="vs" begin="0" end="5" step="1">
+								<c:forEach var="g" items="${gm}">
 								<li><div class="checkuserdiv">
 										<img src="${contextPath}/resources/img/client_2.png" class="rounded-circle "
-											style="height: 70px;" alt="Cinque Terre"><c:out value="${g.memberList[vs.index].mName}"/>
+											style="height: 70px;" alt="Cinque Terre"><c:out value="${g.memberList[0].mName}"/>
 									</div></li>
 								</c:forEach>
 							</ul>
