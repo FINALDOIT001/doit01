@@ -13,10 +13,10 @@ public class BookShareReply {
 	private String bscCon;
 	private String bscStatus;
 	
-	public BookShareReply() {
-	}
+	public BookShareReply() {}
 
 	public BookShareReply(int bscNo, int bscBsNo, String bscWriter, Date bscDate, String bscCon, String bscStatus) {
+		super();
 		this.bscNo = bscNo;
 		this.bscBsNo = bscBsNo;
 		this.bscWriter = bscWriter;
@@ -78,9 +78,5 @@ public class BookShareReply {
 		return "BookShareReply [bscNo=" + bscNo + ", bscBsNo=" + bscBsNo + ", bscWriter=" + bscWriter + ", bscDate="
 				+ bscDate + ", bscCon=" + bscCon + ", bscStatus=" + bscStatus + "]";
 	}
-
 	
-	
-	
-
 }

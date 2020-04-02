@@ -24,7 +24,10 @@ public class BookShareDao {
 	}
 
 	public ArrayList<BookShareReply> selectReplyList(int bsNo) {
-		return (ArrayList)sqlSession.selectList("msMapper.selectBSReply", bsNo);
+		System.out.println("다오 bsNo : " + bsNo);
+		ArrayList<BookShareReply> list = (ArrayList)sqlSession.selectList("msMapper.selectBSReply", bsNo);
+		System.out.println("Dao 댓글리스트 : " + list);
+		return list;
 	}
 
 }

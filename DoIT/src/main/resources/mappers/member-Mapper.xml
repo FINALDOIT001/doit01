@@ -25,4 +25,12 @@
     	WHERE M_ID=#{mId}
     </select> 
     
+    <select id="memberLogin" parameterType="Member" resultMap="memberResultSet">
+    	SELECT	*
+   		FROM	MEMBER
+   		WHERE	M_ID=#{mId}
+   		AND		M_PWD=#{mPwd}
+   		<!-- AND		M_STATUS='Y' -->
+    </select>
+    
 </mapper>
