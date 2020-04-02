@@ -24,7 +24,6 @@ public class BoardController {
 	@Autowired
 	private BoardService bService;
    
-<<<<<<< HEAD
 	@RequestMapping("fblist.go")
 	public ModelAndView fboardList(ModelAndView mv,@RequestParam(value="currentPage",required=false,defaultValue="1") int currentPage) {
 		
@@ -106,43 +105,4 @@ public class BoardController {
 		return mv;
 	}
 	
-	
-	
-	
-	
-
-
-=======
-   @RequestMapping("moveFB.go")
-   public String moveFreeBoard() {
-      return "board/freeBoard_list";
-   }
-   
-   @RequestMapping("fbView.go")
-   public String moveFreeBoardView() {
-      return "board/freeBoard_view";
-   }
-   
-   @RequestMapping("fbWrite.go")
-   public String moveFreeBoardWrite() {
-      return "board/freeBoard_write";
-   }
-   
-   @RequestMapping("moveNT.go")
-   public String moveNotice() {
-      return "board/notice_list";
-   }
-   
-   @RequestMapping("ntView.go")
-   public String moveNoticeView() {
-      return "board/notice_view";
-   }
-   
-   @RequestMapping("ntWrite.go")
-   public String moveNoticeWrite() {
-      return "board/notice_write";
-   }
-   
-   
->>>>>>> branch 'master' of https://github.com/FINALDOIT001/doit01.git
 }
