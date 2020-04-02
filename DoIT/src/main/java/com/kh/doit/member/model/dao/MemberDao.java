@@ -17,7 +17,7 @@ public class MemberDao {
 	}
 
 	public Member memberLogin(Member m) {
-		// TODO Auto-generated method stub
+
 		return (Member)sqlSession.selectOne("memberMapper.memberLogin",m);
 	}
 	public int insertMember(Member m) {

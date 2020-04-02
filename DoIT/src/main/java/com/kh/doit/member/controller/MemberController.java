@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -90,14 +91,19 @@ public class MemberController {
 	 * @return
 	 */
 	@RequestMapping(value="login.me", method=RequestMethod.POST)
-	public String moveLogin(@ModelAttribute Member m, Model model) {
+	public String moveLogin(@ModelAttribute Member m, Model model ) {
+		
+		System.out.println(m);
 		
 		Member loginUser = mService.memberLogin(m);
+		
+		System.out.println(loginUser);
 		
 		if(loginUser != null && bcryptPasswordEncoder.matches(m.getmPwd(), loginUser.getmPwd())) {
 			
 			model.addAttribute("loginUser", loginUser);
-			return "redirect:commom/main.jsp";
+			return "redirect:index.jsp"; 
+			
 			
 		}else {
 			
@@ -124,7 +130,7 @@ public class MemberController {
 		}
 	
 		@RequestMapping("join.me")
-		public String insertMember(Member m, ModelAndView mv, @RequestParam(value="phone1", required=false) String phone1,
+		public ModelAndView insertMember(Member m, ModelAndView mv, @RequestParam(value="phone1", required=false) String phone1,
 																@RequestParam(value="phone2", required=false) String phone2,
 																@RequestParam(value="phone3", required=false) String phone3,
 																@RequestParam(value="email",required=false) String email,
@@ -155,13 +161,14 @@ public class MemberController {
 			int result = mService.insertMember(m);
 			
 			if(result > 0) {
-				return "redirect:index.jsp";
+				// 회원가입 성공 했을 때 로그인으로 보내주기
+				mv.setViewName("redirect:index.jsp");
 			}else {
 				mv.addObject("msg","회원가입 실패!");
 				mv.setViewName("common/errorPage");
 			}
+			return mv;
 			
-			return "";
 		}
 		
 }

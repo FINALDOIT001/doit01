@@ -31,4 +31,11 @@
     	VALUES (SEQ_MNO.NEXTVAL,#{mId}, #{mPwd}, #{mName}, #{mAddr}, #{mPhone}, 
     			#{mEmail}, default, default, SYSDATE, SYSDATE, default, default)
     </insert>
+    
+    <select id="memberLogin" parameterType="Member" resultMap="memberResultSet">
+    	SELECT *
+    	FROM MEMBER
+    	WHERE M_ID=#{mId}
+    </select>
+    
 </mapper>

@@ -34,7 +34,7 @@
 	<!-- inseok.css -->
 	<link href="${contextPath}/resources/vendor_inseok/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-	<link href="${contextPath}/resources/css/sb-admin-2.min_inseok.css" rel="stylesheet">
+<%-- 	<link href="${contextPath}/resources/css/sb-admin-2.min_inseok.css" rel="stylesheet"> --%>
 	
 	
 	<!-- 각자 자신의 css 파일을 넣어주시기 바랍니다. -->
@@ -103,7 +103,7 @@
 	                      	</li>
 	                      	<li>
                       	</c:if>
-                      	<c:if test="${ !empty sessionScope.loginUser && (sessionScope.loginUser.mId != 0) }">
+                      	<c:if test="${ !empty sessionScope.loginUser && (sessionScope.loginUser.mno != 0) }">
                       	
  							<li class="nav-item dropdown no-arrow mx-1">
 								<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -160,7 +160,7 @@
 
                       	
                       		<li>
-                      			<a class="nav-link"><label><span style="color:#d64748 !important;">${ loginUser.userName }</span>&nbsp;님</label></a>
+                      			<a class="nav-link"><label><span style="color:#d64748 !important;">${ loginUser.mName }</span>&nbsp;님</label></a>
                       		</li>
                       		<li class="nav-item">
 	                         	<a class="nav-link" href="myinfo.me">MYPAGE</a>
@@ -169,9 +169,9 @@
 	                         	<a class="nav-link" href="logout.do">LOGOUT</a>
                       		</li>
                       	</c:if>
-                      	<c:if test="${ !empty sessionScope.loginUser && (sessionScope.loginUser.mId == 0) }">
+                      	<c:if test="${ !empty sessionScope.loginUser && (sessionScope.loginUser.mno == 0) }">
                       		<li>
-                      			<a class="nav-link"><label><span style="color:#d64748 !important;">${ loginUser.userName }</span>&nbsp;님</label></a>
+                      			<a class="nav-link"><label><span style="color:#d64748 !important;">${ loginUser.mName }</span>&nbsp;님</label></a>
                       		</li>
                       		<li class="nav-item">
 	                         	<a class="nav-link" href="go.ad">ADMINPAGE</a>
@@ -186,7 +186,7 @@
                      	  <%-- <c:if test="${ !empty sessionScope.loginUser }">
 					         <h3 align="right">
 					            <li class="">
-		                         	<label>${ loginUser.userName }님</label>
+		                         	<label>${ loginUser.mName }님</label>
 		                      	</li>
 		                      	<li>
 		                      	<a class="nav-link" href="myinfo.me">정보수정</a>
