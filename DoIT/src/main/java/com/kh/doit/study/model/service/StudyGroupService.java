@@ -2,7 +2,8 @@ package com.kh.doit.study.model.service;
 
 import java.util.ArrayList;
 
-import com.kh.doit.study.model.vo.PageInfo;
+
+import com.kh.doit.study.model.vo.PageInfojung;
 import com.kh.doit.study.model.vo.StudyGroup;
 
 public interface StudyGroupService {
@@ -18,7 +19,7 @@ public interface StudyGroupService {
 	 * @param pi
 	 * @return
 	 */
-	ArrayList<StudyGroup> selectList(PageInfo pi);
+	ArrayList<StudyGroup> selectList(PageInfojung pi);
 
 	/**
 	 * 게시글 디테일 조회

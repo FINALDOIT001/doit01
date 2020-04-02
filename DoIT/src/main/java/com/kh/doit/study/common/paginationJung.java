@@ -1,12 +1,12 @@
 package com.kh.doit.study.common;
 
-import com.kh.doit.study.model.vo.PageInfo;
+import com.kh.doit.study.model.vo.PageInfojung;
 
-public class pagination {
+public class paginationJung {
 
-	public static PageInfo getPageInfo(int currentPage, int listCount) {
+	public static PageInfojung getPageInfo(int currentPage, int listCount) {
 
-		PageInfo pi = null;
+		PageInfojung pi = null;
 
 		int pageLimit = 10;
 		int maxPage;
@@ -26,7 +26,7 @@ public class pagination {
 			endPage = maxPage;
 
 		}
-		pi = new PageInfo(currentPage, listCount, pageLimit, maxPage, startPage, endPage, boardLimit);
+		pi = new PageInfojung(currentPage, listCount, pageLimit, maxPage, startPage, endPage, boardLimit);
 
 		return pi;
 	}

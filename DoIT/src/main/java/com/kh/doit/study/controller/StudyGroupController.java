@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kh.doit.study.common.pagination;
+import com.kh.doit.study.common.paginationJung;
 import com.kh.doit.study.model.service.StudyGroupService;
-import com.kh.doit.study.model.vo.PageInfo;
+import com.kh.doit.study.model.vo.PageInfojung;
 import com.kh.doit.study.model.vo.StudyGroup;
 
 @Controller
@@ -28,7 +28,7 @@ public class StudyGroupController {
 
 		System.out.println(listCount);
 
-		PageInfo pi = pagination.getPageInfo(currentPage, listCount);
+		PageInfojung pi = paginationJung.getPageInfo(currentPage, listCount);
 
 		ArrayList<StudyGroup> sgList = sgService.selectList(pi);
 

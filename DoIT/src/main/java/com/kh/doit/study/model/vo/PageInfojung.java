@@ -3,7 +3,7 @@ package com.kh.doit.study.model.vo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PageInfo {
+public class PageInfojung {
 	
 	private int currentPage;
 	private int listCount;
@@ -14,12 +14,12 @@ public class PageInfo {
 	
 	private int boardLimit;
 
-	public PageInfo() {
+	public PageInfojung() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public PageInfo(int currentPage, int listCount, int pageLimit, int maxPage, int startPage, int endPage,
+	public PageInfojung(int currentPage, int listCount, int pageLimit, int maxPage, int startPage, int endPage,
 			int boardLimit) {
 		super();
 		this.currentPage = currentPage;

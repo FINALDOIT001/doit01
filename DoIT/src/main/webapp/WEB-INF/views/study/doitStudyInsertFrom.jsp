@@ -11,6 +11,12 @@
 	
 </script>
 
+
+<!-- Datepicker 사용 css 건들지마 혼나 -->
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- summernote 사용 건들지마 혼나 -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 	crossorigin="anonymous"></script>
@@ -19,9 +25,11 @@
 	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.js"></script>
-</head>
 
-
+<script type="text/javascript"
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=YOUR_CLIENT_ID"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-lite.min.js"></script>
 <body>
 
 
@@ -32,6 +40,8 @@
 	<!--::team part end::-->
 	<section class="about_part section-padding">
 		<div class="container">
+		<form action="sgInsert.go" method="post"
+							enctype="multipart/form-date" class="was-validated">
 			<div class="row">
 				<div class="col-lg-6 col-md-6">
 
@@ -45,11 +55,10 @@
 
 					</div>
 				</div>
+				
 				<div class="offset-lg-1 col-lg-5 col-sm-8 col-md-6"
 					style="margin-top: 3%;">
 					<div class="about_text">
-						<form action="" class="was-validated">
-							<!-- 폼 태그 시작 부분 나중에 추가-->
 
 							<div class="row">
 								<div class="col">
@@ -67,16 +76,16 @@
 
 							<div class="row">
 								<div class="col">
-									<input type="number" min="1" class="form-control"
-										placeholder="모집 인원" name="pcount" required>
+									<input type="text" id="from" class="form-control"
+										placeholder="시작 날짜 설정" name="startDate" required>
 									<div class="valid-feedback">Valid.</div>
-									<div class="invalid-feedback">모집 인원 설정</div>
+									<div class="invalid-feedback">시작 기간 설정</div>
 								</div>
 								<div class="col">
-									<input type="date" class="form-control" placeholder="날짜 설정"
-										name="stusydate" required>
+									<input type="text" id="to" class="form-control"
+										placeholder="종료 날짜 설정" name="endDate" required>
 									<div class="valid-feedback">Valid.</div>
-									<div class="invalid-feedback">스터디 기간 설정</div>
+									<div class="invalid-feedback">종료 기간 설정</div>
 								</div>
 							</div>
 							<br>
@@ -105,16 +114,22 @@
 									<div class="invalid-feedback">인당 보증급 설정</div>
 								</div>
 								<div class="col">
-									<input type="text" class="form-control" placeholder="검색어 등록"
-										name="place" required>
+									<input type="number" min="1" class="form-control"
+										placeholder="모집 인원" name="pcount" required>
 									<div class="valid-feedback">Valid.</div>
-									<div class="invalid-feedback">검색어 입력 예) JAVA</div>
+									<div class="invalid-feedback">모집 인원 설정</div>
 								</div>
 							</div>
 							<br>
-							<br>
-
-
+							<div class="row">
+								<div class="col">
+									<input type="text" id="teg" class="form-control"
+										placeholder="검색어 등록" name="teg" required>
+									<div class="valid-feedback">Valid.</div>
+									<div class="invalid-feedback">검색어 입력 예) @JAVA</div>
+								</div>
+							</div>
+							<br> <br>
 
 							<div class="form-group form-check">
 								<label class="form-check-label"> <input
@@ -145,6 +160,8 @@
 		</div>
 	</section>
 
+
+
 	<script>
 		$('#summernote').summernote(
 				{
@@ -167,8 +184,40 @@
 
 
 
+	<!-- datapicker 건들지마 진짜 혼나 -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
+	<script>
+		$(function() {
+			var dateFormat = "mm/dd/yy", from = $("#from").datepicker({
+				minDate : 0,
+				defaultDate : "+1w",
+				changeMonth : true,
+
+			}).on("change", function() {
+				to.datepicker("option", "minDate", getDate(this));
+			}), to = $("#to").datepicker({
+				defaultDate : "+1w",
+				changeMonth : true,
+
+			}).on("change", function() {
+				from.datepicker("option", "maxDate", getDate(this));
+			});
+
+			function getDate(element) {
+				var date;
+				try {
+					date = $.datepicker.parseDate(dateFormat, element.value);
+				} catch (error) {
+					date = null;
+				}
+
+				return date;
+			}
+		});
+	</script>
 
 
 </body>

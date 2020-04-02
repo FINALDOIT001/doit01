@@ -26,7 +26,6 @@ public class StudyGroup {
 	private String sgTag;
 	private String sgPayment;
 	private String sgStatus;
-	
 	public StudyGroup() {
 		super();
 		// TODO Auto-generated constructor stub

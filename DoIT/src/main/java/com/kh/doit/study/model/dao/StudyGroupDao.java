@@ -7,7 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.kh.doit.study.model.vo.PageInfo;
+import com.kh.doit.study.model.vo.PageInfojung;
 import com.kh.doit.study.model.vo.StudyGroup;
 
 @Repository("sgDao")
@@ -21,7 +21,7 @@ public class StudyGroupDao {
 		return sqlSession.selectOne("studyGroupMapper.getlistCount");
 	}
 
-	public ArrayList<StudyGroup> selectList(PageInfo pi) {
+	public ArrayList<StudyGroup> selectList(PageInfojung pi) {
 		int offset = (pi.getCurrentPage()-1)*pi.getBoardLimit();
 		
 		RowBounds rowBound = new RowBounds(offset,pi.getBoardLimit());
