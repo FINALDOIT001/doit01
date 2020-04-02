@@ -190,11 +190,11 @@
  */
  
  
-/* function fn_comment(code){
+function fn_comment(code){
     
     $.ajax({
         type:'POST',
-        url : "<c:url value='/board/addComment.do'/>",
+        url : 'addReply.do',
         data:$("#commentForm").serialize(),
         success : function(data){
             if(data=="success")
@@ -237,7 +237,7 @@ function getCommentList(){
             console.log(data);
 			
             var html1 = "";
-            var cCnt = data.length;
+            /* var cCnt = data.length; */
             
             if(data.length > 0){
             	
@@ -248,7 +248,7 @@ function getCommentList(){
                     html1 += "<div class='d-flex justify-content-between'>";
                     html1 += "<div class='d-flex align-items-center'>";
                     html1 += "<div class='thumb'>";
-                    html1 += "<img src='img/comment/comment_1.png' alt='' style='width: 55px; height: 55px;'>";
+                    /* html1 += "<img src='${contextPath}/resources/img/"+data[i].mRenamefilename+"' alt='' style='width: 55px; height: 55px;'>"; */
                     html1 += "</div>";
                     html1 += "<h5>";
                     html1 += "<a href='#'>"+data[i].bscWriter+"</a>";

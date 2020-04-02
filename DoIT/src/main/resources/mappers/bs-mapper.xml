@@ -26,7 +26,6 @@
     	<result property="bscDate" column="BSC_DATE"/>
     	<result property="bscCon" column="BSC_CON"/>
     	<result property="bscStatus" column="BSC_STATUS"/>
-    	<collection property="bSResultSet" resultMap="BSResultSet"></collection>
     </resultMap>
     
     <select id="selectBSList" resultMap="BSResultSet">
@@ -37,7 +36,7 @@
     </select>
     
     <select id="selectOne" parameterType="_int" resultMap="BSResultSet">
-    	SELECT	BSC_NO
+    	SELECT	*
     	FROM	BOOK_SHARE
     	WHERE	1=1
     	AND		BS_NO=#{bsNo}
@@ -45,18 +44,11 @@
     </select>
     
     <select id="selectBSReply" resultMap="BSReplyResultSet">
-    	SELECT	BSC_NO
-    			,C.BSC_BS_NO
-    			,C.BSC_WRITER
-    			,C.BSC_DATE
-    			,C.BSC_CON
-    			,C.BSC_STATUS
- 		FROM	BOOK_SHARE_COMMENTS C
- 		JOIN	BOOK_SHARE B
- 		ON		C.BSC_BS_NO = B.BS_NO
+    	SELECT	*
+ 		FROM	BOOK_SHARE_COMMENTS
  		WHERE	1=1
- 		AND		C.BSC_BS_NO=#{bsNo}
- 		AND		C.BSC_STATUS='Y'
+ 		AND		BSC_BS_NO=#{bsNo}
+ 		AND		BSC_STATUS='Y'
     </select>
     
     

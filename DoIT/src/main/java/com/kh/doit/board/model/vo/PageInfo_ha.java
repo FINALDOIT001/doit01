@@ -1,25 +1,23 @@
-package com.kh.doit.study.model.vo;
+package com.kh.doit.board.model.vo;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class PageInfo {
+public class PageInfo_ha {
 	
 	private int currentPage;
 	private int listCount;
 	private int pageLimit;
 	private int maxPage;
 	private int startPage;
-	private int endPage;
+	private int endPage; 
+	private int boardLimit; 
 	
-	private int boardLimit;
-
-	public PageInfo() {
-		super();
-		// TODO Auto-generated constructor stub
+	public PageInfo_ha() {
+		super(); 
 	}
 
-	public PageInfo(int currentPage, int listCount, int pageLimit, int maxPage, int startPage, int endPage,
+	public PageInfo_ha(int currentPage, int listCount, int pageLimit, int maxPage, int startPage, int endPage,
 			int boardLimit) {
 		super();
 		this.currentPage = currentPage;
@@ -89,12 +87,10 @@ public class PageInfo {
 
 	@Override
 	public String toString() {
-		return "PageInfo [currentPage=" + currentPage + ", listCount=" + listCount + ", pageLimit=" + pageLimit
+		return "PageInfo_ha [currentPage=" + currentPage + ", listCount=" + listCount + ", pageLimit=" + pageLimit
 				+ ", maxPage=" + maxPage + ", startPage=" + startPage + ", endPage=" + endPage + ", boardLimit="
 				+ boardLimit + "]";
 	}
-	
-	
-	
+
 
 }

@@ -23,25 +23,54 @@
 		<result property="sgTag" column="SG_TAG"/>
 		<result property="sgPayment" column="SG_PAYMENT_YN"/>
 		<result property="sgStatus" column="SG_STATUS_YN"/>
-			
-		
 	</resultMap>
+	
+	<resultMap id="groupMemberResultSet" type="GroupMember">
+		<result property="gm_sgNo" column="GM_SG_NO"/>
+		<result property="gm_mNo" column="GM_M_NO"/>
+		<collection property="memberList" javaType="java.util.ArrayList" resultMap="memberResultSet"/>
+	</resultMap>
+	
+	<resultMap id="memberResultSet" type="Member">
+   		<id property="mno" column="M_NO"/>
+   		<result property="mId" column="M_ID"/>
+   		<result property="mPwd" column="M_PWD" />
+   		<result property="mName" column="M_NAME" />
+   		<result property="mAddr" column="M_ADDR" />
+   		<result property="mPhone" column="M_PHONE" />
+   		<result property="mEmail" column="M_EMAIL" />
+   		<result property="mOrginalfilename" column="M_ORGINAL_FILENAME" />
+   		<result property="mRenamefilename" column="M_RENAME_FILENAME" />
+   		<result property="mEnrolldate" column="M_ENROLL_DATE" />
+   		<result property="mUpdatedate" column="M_UPDATE_DATE" />
+   		<result property="mUserroles" column="M_USERROLES" />
+   		<result property="mStatus" column="M_STATUS" />
+    </resultMap>
 	
 	<select id="getlistCount" resultType="_int">
 	SELECT COUNT(*)
 	FROM STUDY_GROUP
 	WHERE SG_STATUS_YN='Y'
-	
 	</select>
 	
 	<select id="selectList" resultMap="studyGroupResultSet">
 	SELECT * FROM STUDY_GROUP
 	WHERE SG_STATUS_YN='Y'
 	ORDER BY SG_NO DESC
-	
 	</select>
-
-
+	
+	<select id="selectSg" resultMap="studyGroupResultSet">
+		SELECT *
+		FROM STUDY_GROUP
+		WHERE SG_NO = #{sgNo}
+	</select>
+	
+	<select id="groupMember" resultMap="groupMemberResultSet">
+		SELECT M.M_NAME, M.M_ORGINAL_FILENAME
+		FROM GROUP_MEMBER GM
+		JOIN MEMBER M ON(M.M_NO = GM.GM_M_NO)
+		WHERE GM_SG_NO = #{sgNo} 
+	</select>
 
 
 </mapper>

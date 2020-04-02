@@ -25,6 +25,7 @@
     	WHERE M_ID=#{mId}
     </select> 
     
+
     <insert id="insertMember" parameterType="Member">
     	INSERT INTO MEMBER 
     	VALUES (SEQ_MNO.NEXTVAL,#{mId}, #{mPwd}, #{mName}, #{mAddr}, #{mPhone}, 

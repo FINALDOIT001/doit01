@@ -29,7 +29,6 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
-
 	/**
 	 * 회원 가입
 	 * 김혜림
@@ -37,6 +36,16 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int insertMember(Member m) {
 		return mDao.insertMember(m);
+	}
+
+	
+	
+
+
+	@Override
+	public Member memberLogin(Member m) {
+		
+		return mDao.memberLogin(m);
 	}
 
 	

@@ -16,10 +16,13 @@ public class MemberDao {
 		return sqlSession.selectOne("memberMapper.idCheck",id);
 	}
 
+	public Member memberLogin(Member m) {
+		// TODO Auto-generated method stub
+		return (Member)sqlSession.selectOne("memberMapper.memberLogin",m);
+	}
 	public int insertMember(Member m) {
 		return sqlSession.insert("memberMapper.insertMember",m);
 	}
-	
 	
 	
 	
