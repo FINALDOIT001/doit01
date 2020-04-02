@@ -61,14 +61,12 @@
 							style="font-size: xx-large; font-weight: bold; margin-bottom: 20px;">
 							JAVA 스터디 그룹 </label> <br>
 						<ul>
-							<li style="margin-bottom: 3px;"><span>지역 :</span> ${sg.sgAddr}</li>
-							<li style="margin-bottom: 3px;">모집인원 : 3/${sg.sgMaxPeople}</li>
-							<li style="margin-bottom: 3px;">팀장: ${sg.sgWriter}</li>
-							<li style="margin-bottom: 3px;">보증금 : ${sg.sgDeposit}</li>
+							<li style="margin-bottom: 3px;"><span>지역 :</span> 서울 강남구</li>
+							<li style="margin-bottom: 3px;">모집인원 : 3/8</li>
+							<li style="margin-bottom: 3px;">팀장: 박정호</li>
+							<li style="margin-bottom: 3px;">보증금 : 20,000</li>
 							<li style="margin-bottom: 3px;">수업 진행도 : 모집 중</li>
-							<li style="margin-bottom: 3px;">중간 참여 : <c:if test="${ sg.sgJoin eq 'Y' }"><b style="color:blue">참여 가능</b></c:if>
-																	 <c:if test="${ sg.sgJoin eq 'N' }"><b>참여 불가능</b></c:if>
-							</li>
+							<li style="margin-bottom: 3px;">중간 참여 : 가능 & 불가능</li>
 						</ul>
 						<br>
 						<button class="genric-btn info radius"
@@ -103,6 +101,9 @@
 										<img src="${contextPath}/resources/img/client/client_2.png" class="rounded-circle "
 											style="height: 70px;" alt="Cinque Terre">권구현
 									</div></li>
+
+
+
 							</ul>
 						</div>
 
@@ -147,7 +148,30 @@
 						<div class="col-lg-12 div_border">
 							<span
 								style="font-size: x-large; font-weight: bold; display: block; margin-bottom: 30px;">활동
-								계획</span> ${sg.sgCon}
+								계획</span> [중국어 언어교환 모임 소개(중한교류-중국어 회화 모임)] 안녕하세요. 중한교류-중국어회화 언어교환 모임에
+							오신걸 환영합니다. 저희는 평일 저녁 및 주말 오후 시간에 중국인 한국인들이 함께 모여 언어교환을 합니다.
+							언어교환이란 정말 유익한 프로그램이에요. 요즘 한국에 중국인들이 정말 많습니다. 생각보다 많은 중국인들이 한국 친구를
+							사귀고 싶고, 한국어도 배우고 싶어한답니다. 물론 많은 한국분들이 중국어를 배우고 싶고 중국인 친구들을 사귀고
+							싶어하구요. 그러니까 이들이 함께 모여 교류한다면 정말 좋은 시너지 효과가 날거라고 생각합니다. 그곳이 바로
+							Global Chinese Mates가 주최하는 ‘중한교류-중국어회화 모임'입니다. 그렇다면 일정 및 장소,
+							프로그램등이 궁금하시죠? 아래 확인해주세요!
+
+							https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/8/4/e/2/600_459514018.jpeg
+
+							[일정> 홍대 화요일 저녁 7시 ~ 밤 10시(홍대 2번출구 아르고 카페 : 마포구 동교동 204-54) 강남 목요일
+							저녁 7시 ~ 밤 10시(신논현역 3번출구 GSM테라스 : 강남구 논현동 166번지) 강남 토요일 오후 3시 ~ 오후
+							6시(신논현역 3번출구 GSM테라스 : 강남구 논현동 166번지) 강남 일요일 오후 3시 ~ 오후 6시(홍대 1번출구
+							Apirl coffee : 마포구 동교동 203-40)
+
+							https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/8/4/e/1/600_459514017.jpeg
+
+							[장소> 위에 참고해 주세요~ [지도] 사진 확인해주세요.
+
+							https://secure.meetupstatic.com/photos/event/8/d/4/3/600_463536163.jpeg
+
+							[메뉴> 커피, 차, 쥬스, 맥주, 칵테일 각 카페의 사정에 따라서 다르지만 많은 종류의 쥬스, 차, 맥주, 칵테일,
+							와인등이 준비되어 있답니다. 맥주, 칵테일, 와인 한잔은 여러분이 중국어를 하는데 큰 도움이 될거에요. 물론 지나친
+							음주는 좋지 않지만 퇴근후 혹은 주말에 한잔 하는 것은 외국어 향상에 큰 도움이 될거라고 확신합니다.
 						</div>
 
 

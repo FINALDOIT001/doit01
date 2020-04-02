@@ -31,19 +31,16 @@
 	SELECT COUNT(*)
 	FROM STUDY_GROUP
 	WHERE SG_STATUS_YN='Y'
+	
 	</select>
 	
 	<select id="selectList" resultMap="studyGroupResultSet">
 	SELECT * FROM STUDY_GROUP
 	WHERE SG_STATUS_YN='Y'
 	ORDER BY SG_NO DESC
-	</select>
 	
-	<select id="selectSg" resultMap="studyGroupResultSet">
-		SELECT *
-		FROM STUDY_GROUP
-		WHERE SG_NO = #{sgNo}
 	</select>
+
 
 
 

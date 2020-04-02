@@ -2,6 +2,9 @@ package com.kh.doit.bookShare.model.vo;
 
 import java.sql.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class BookShareReply {
 	private int bscNo;
 	private int bscBsNo;

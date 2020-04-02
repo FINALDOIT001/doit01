@@ -18,6 +18,10 @@ public class MemberServiceImpl implements MemberService {
 
 	
 	
+	/**
+	 * 아이디 중복 체크
+	 * 김혜림
+	 */
 	@Override
 	public int idCheck(String id) {
 		
@@ -26,10 +30,13 @@ public class MemberServiceImpl implements MemberService {
 
 
 
+	/**
+	 * 회원 가입
+	 * 김혜림
+	 */
 	@Override
-	public Member memberLogin(Member m) {
-		
-		return mDao.memberLogin(m);
+	public int insertMember(Member m) {
+		return mDao.insertMember(m);
 	}
 
 	
