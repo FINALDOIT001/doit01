@@ -31,17 +31,17 @@
                 <div class="section_tittle">
                     <h2><span>책을</span> 등록합시다</h2>
                 </div>
-                <form action="insertBook.do" id="kwon-Form01" enctype="multipart/form-data">
-                    <input type="hidden" name="userId" value="">
-                    <input type="hidden" name="userName" value="">
+                <form action="insertBook.do" id="kwon-Form01" enctype="multipart/form-data" method="POST">
+                    <input type="hidden" name="mId" value="${ loginUser.mId }">
+                    <input type="hidden" name="bsWriter" value="${ loginUser.mName }">
                     <table border="1" class="kwon-table1" cellpadding="10px">
                         
                         <tr>
                             <td class="th02">*지역</td>
-                            <td colspan="2"><input type="text" name="location" required></td>
+                            <td colspan="2"><input type="text" name="bsLocation" placeholder="예시 : 서울 강남 등" required></td>
                             <td class="th02">*분류</td>
                             <td colspan="3">
-                                 <select name="category" style="text-align: right;" required>
+                                 <select name="bsCategory" style="text-align: right;" required>
                                     <option value="">category</option>
                                     <option value="JAVA">JAVA</option>
                                     <option value="JavaScript">JavaScript</option>
@@ -56,14 +56,14 @@
                         
                         <tr>
                            <td colspan="1" class="th02">사진 추가</td>
-                           <td colspan="4"><input type="file" name="file"></td>
+                           <td colspan="4"><input id="bsFile" type="file" name="bsFileName"></td>
                        </tr>
                         <td class="th02" colspan="1">*제목</td>
-                        <td class="td02" colspan="4"><input type="text" name="title" class="tdin02" required></td>
+                        <td class="td02" colspan="4"><input type="text" name="bsTitle" class="tdin02" required></td>
                         
                     </table>
                     <div id="kwon-area1">
-                        <input type="textarea" class="form-control" id="summernote" name ="content"></textarea>
+                        <textarea class="form-control" id="summernote" name="bsCon"></textarea>
                     </div>
         
                     <div style="text-align:center;">
@@ -78,11 +78,6 @@
     </div>
 </section>
 <!--::project part end::-->
-	
-	
-	
-	
-	
 	
 
 	<jsp:include page="../common/footer.jsp"/>
@@ -115,7 +110,8 @@
         
         $('#summernote').summernote('code');
     
-
+	var pic = $('#uploadFile').val();
+        console.log(pic);
    </script>
 	
 

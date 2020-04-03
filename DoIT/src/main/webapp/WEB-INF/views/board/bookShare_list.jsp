@@ -26,11 +26,14 @@
 							<span>책을</span> 나눕시다
 						</h2>
 					</div>
+					<c:if test="${ loginUser == null }">
+						로그인 하신 후 보실 수 있습니다.
+					</c:if>
 					<div>
-						현재 누르면 링크는 연결되어 있고 (# 처리로 이동은 X) console로 No만 찍히게 만들었습니다
 						<div id="kwon-inst01">
-							<div id="kwon-inst-btn01" class="genric-btn danger circle">책
-								등록하기</div>
+						<c:if test="${ loginUser != null }">
+							<div id="kwon-inst-btn01" class="genric-btn danger circle">책 등록하기</div>
+						</c:if>
 						</div>
 						<table id="test1" class="table table-bordered">
 							<thead class="kwon-thead1">
@@ -60,13 +63,19 @@
 		<tr class="kwon-tr1">
 			<td align="center" class="kwon-td1">${ bs.bsNo }</td>
 			<td align="center" class="kwon-td1">${ bs.bsCategory }</td>
-			<td align="center" class="kwon-td1 tdtitle1">
-			<c:url var="bsView" value="bsView.go">
-				<c:param name="bsNo" value="${ bs.bsNo }"/>
-			</c:url>
+			<td align="center" class="kwon-td1">
+				<c:url var="bsView" value="bsView.go">
+					<c:param name="bsNo" value="${ bs.bsNo }"/>
+				</c:url>
 			
+			<c:if test="${ loginUser != null }">
 				<a class="kwon-td1 tdtitle1" href="${ bsView }" 
 				style="color:#5b5b5b !important;">${ bs.bsTitle }</a>
+			</c:if>
+			<c:if test="${ loginUser == null }">
+				${ bs.bsTitle }
+			</c:if>
+			
 			
 			</td>
 			<td align="center" class="kwon-td1">${ bs.bsWriter }</td>
