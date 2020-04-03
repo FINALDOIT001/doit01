@@ -23,6 +23,7 @@
 		<result property="sgTag" column="SG_TAG"/>
 		<result property="sgPayment" column="SG_PAYMENT_YN"/>
 		<result property="sgStatus" column="SG_STATUS_YN"/>
+		<result property="sgConfirm" column="SG_CONFIRM_YN"/>
 	</resultMap>
 	
 	<resultMap id="groupMemberResultSet" type="GroupMember">
@@ -62,7 +63,7 @@
 	</select>
 	
 	
-		<select id="selectSg" resultMap="studyGroupResultSet">
+	<select id="selectSg" resultMap="studyGroupResultSet">
 		SELECT *
 		FROM STUDY_GROUP
 		WHERE SG_NO = #{sgNo}
@@ -73,7 +74,7 @@
 	INSERT INTO STUDY_GROUP
 	VALUES(SEQ_SGNO.NEXTVAL,#{sgTitle},#{sgWriter},#{sgMaxPeople},#{sgAddr},#{sgDeposit},SYSDATE,
 	#{sgStartDate},#{sgEndDate},#{sgLocation},#{sgJoin},#{sgCon},#{sgOrginalFileName},#{sgRenameFileName},
-	#{sgTag},DEFAULT,DEFAULT)
+	#{sgTag},DEFAULT,DEFAULT,DEFAULT)
 	
 	</insert>
 	

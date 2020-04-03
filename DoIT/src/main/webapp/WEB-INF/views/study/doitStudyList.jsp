@@ -87,11 +87,11 @@
 					</div>
 				</div>
 				<div class="col-lg-4">
-					<%-- <c:if test="${!empty sessionScope.loginUser}"> --%>
+					<c:if test="${!empty sessionScope.loginUser}">
 						<input type="button" class="genric-btn danger"
 							style="float: right; width: 120px;" value="스터디 개설"
 							onclick="location.href='studyInsert.go'" />
-				<%-- 	</c:if> --%>
+				 	</c:if> 
 				</div>
 				<div class="col-lg-12" style="margin-top: 20px;">
 

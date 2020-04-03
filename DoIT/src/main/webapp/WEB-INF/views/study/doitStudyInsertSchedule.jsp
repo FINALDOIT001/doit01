@@ -58,8 +58,8 @@
 										name="studytitle" required>
 									<div class="valid-feedback">Valid.</div>
 									<div class="invalid-feedback">공부 주제 입력</div>
-									<input type="text" class="form-control" vlaue="니돈먹튀"
-										name="userId" hidden>
+									<input type="text" class="form-control" value="${m.mId}"
+										name="sgWriter" hidden>
 									<!-- 방 개설 자 아이디 자동 입력 구간-->
 								</div>
 							</div>
