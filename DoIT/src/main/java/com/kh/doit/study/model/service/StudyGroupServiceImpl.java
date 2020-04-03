@@ -50,6 +50,9 @@ public class StudyGroupServiceImpl implements StudyGroupService {
 	}
 
 
+	/**
+	 * 작성자 : 서정도
+	 */
 	@Override
 	public ArrayList<GroupMember> selectGroupMember(int sgNo) {
 		return sgDao.selectGroupMember(sgNo);
