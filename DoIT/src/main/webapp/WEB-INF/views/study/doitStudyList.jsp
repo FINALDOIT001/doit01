@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="${contextPath}/resources/css/jungho.css">
 <link rel="stylesheet" href="${contextPath}/resources/css/hyerim.css">
 <script src="${contextPath}/resources/js/jungho.js"></script>
-	
+
 
 </head>
 
@@ -91,7 +91,7 @@
 						<input type="button" class="genric-btn danger"
 							style="float: right; width: 120px;" value="스터디 개설"
 							onclick="location.href='studyInsert.go'" />
-				 	</c:if> 
+					</c:if>
 				</div>
 				<div class="col-lg-12" style="margin-top: 20px;">
 
@@ -102,26 +102,27 @@
 						<!-- study list start -->
 
 						<c:forEach var="sg" items="${sgList}">
-						
-						<c:if test="${!empty sg.sgRenameFileName}">
-						
-						<div class="col-md-2" style="text-align: center;">
-								<img src="${contextPath}/resources/sgloadFiles/${sg.sgRenameFileName}"
-									class="rounded" alt="Cinque Terre"
-									style="width: 90px; height: 90px;">
-						</div>
-						</c:if>
-						
-						<c:if test="${empty sg.sgRenameFileName}">
-						
-						<div class="col-md-2" style="text-align: center;">
-								<img src="${contextPath}/resources/img/project-5.png"
-									class="rounded" alt="Cinque Terre"
-									style="width: 90px; height: 90px;">
-						</div>
-						</c:if>
-						
-							
+
+							<c:if test="${!empty sg.sgRenameFileName}">
+
+								<div class="col-md-2" style="text-align: center;">
+									<img
+										src="${contextPath}/resources/sgloadFiles/${sg.sgRenameFileName}"
+										class="rounded" alt="Cinque Terre"
+										style="width: 90px; height: 90px;">
+								</div>
+							</c:if>
+
+							<c:if test="${empty sg.sgRenameFileName}">
+
+								<div class="col-md-2" style="text-align: center;">
+									<img src="${contextPath}/resources/img/project-5.png"
+										class="rounded" alt="Cinque Terre"
+										style="width: 90px; height: 90px;">
+								</div>
+							</c:if>
+
+
 							<div class="col-md-9 mt-sm-20">
 								<c:url var="sgDetail" value="studyDetail.go">
 									<c:param name="sgNo" value="${sg.sgNo}" />
@@ -129,14 +130,27 @@
 								</c:url>
 								<a href="${sgDetail}" style="display: block;"><label
 									style="font-size: x-large; font-weight: bold;">${sg.sgTitle}</label></a>
-								<c:if test="${sg.sgJoin eq 'Y'}">
+								
+								<c:if test="${sg.sgConfirm eq 'Y'}">
 									<h5 class="mb-1 text-primary" style="font-weight: bold;">모집
 										중</h5>
+								</c:if>
+								
+								
+								<c:if test="${sg.sgJoin eq 'Y'}">
+									<h5 class="mb-1 text-primary" style="font-weight: bold;"> 중간 참여 가능
+										</h5>
+								</c:if>
+								
+
+								<c:if test="${sg.sgConfirm eq 'N'}">
+								<h5 class="mb-1 text-danger"
+										style="font-weight: bold; color: red;">모집 완료</h5>
 								</c:if>
 
 								<c:if test="${sg.sgJoin eq 'N'}">
 									<h5 class="mb-1 text-danger"
-										style="font-weight: bold; color: red;">모집 완료</h5>
+										style="font-weight: bold; color: red;">중간 참여 완료</h5>
 								</c:if>
 
 
@@ -169,51 +183,48 @@
 						<nav
 							class="col-md-12 blog-pagination_h justify-content-center d-flex">
 							<ul class="pagination">
-									<c:if test="${pi.currentPage eq 1}">
-										<li class="page-item">
-											<a class="page-link" aria-label="Previous"> <span
-											aria-hidden="true"> <span>〈</span>
+								<c:if test="${pi.currentPage eq 1}">
+									<li class="page-item"><a class="page-link"
+										aria-label="Previous"> <span aria-hidden="true"> <span>〈</span>
 										</span>
-										</a>
-										</li>
-									</c:if>
-									<c:if test="${pi.currentPage ne 1 }">
-										<li class="page-item">
-											<c:url var="backPage" value="sgList.go">
-												<c:param name="currentPage" value="${pi.currentPage-1}"/>
-											</c:url>
-												<a href="${backPage}" class="page-link" aria-label="Previous"> <span
-											aria-hidden="true"> <span>〈</span>
+									</a></li>
+								</c:if>
+								<c:if test="${pi.currentPage ne 1 }">
+									<li class="page-item"><c:url var="backPage"
+											value="sgList.go">
+											<c:param name="currentPage" value="${pi.currentPage-1}" />
+										</c:url> <a href="${backPage}" class="page-link" aria-label="Previous">
+											<span aria-hidden="true"> <span>〈</span>
 										</span>
-										</a>
-										</li>
-									</c:if>
-									<c:forEach var="p" begin="${pi.startPage}" end="${pi.endPage}">
+									</a></li>
+								</c:if>
+								<c:forEach var="p" begin="${pi.startPage}" end="${pi.endPage}">
 									<c:if test="${p eq pi.currentPage}">
-									<li class="page-item active"><a class="page-link">${p}</a></li>
+										<li class="page-item active"><a class="page-link">${p}</a></li>
 									</c:if>
 									<c:if test="${p ne pi.currentPage}">
-									<c:url var="pageNext" value="sgList.go">
-									<c:param name="currentPage" value="${p}"/>
-									</c:url>
-									<li class="page-item"><a href="${pageNext}" class="page-link">${p}</a></li>
+										<c:url var="pageNext" value="sgList.go">
+											<c:param name="currentPage" value="${p}" />
+										</c:url>
+										<li class="page-item"><a href="${pageNext}"
+											class="page-link">${p}</a></li>
 									</c:if>
-									</c:forEach>
-								
+								</c:forEach>
+
 								<c:if test="${pi.currentPage eq pi.maxPage}">
-								<li class="page-item"><a class="page-link"
-									aria-label="Next"> <span aria-hidden="true"> <span>〉</span>
-									</span>
-								</a></li>
+									<li class="page-item"><a class="page-link"
+										aria-label="Next"> <span aria-hidden="true"> <span>〉</span>
+										</span>
+									</a></li>
 								</c:if>
 								<c:if test="${pi.currentPage ne pi.maxPage}">
-								<c:url var ="next" value="sgList.go">
-								<c:param name="currentPage" value="${pi.currentPage +1 }"/>
-								</c:url>
-								<li class="page-item"><a href="${next}" class="page-link"
-									aria-label="Next"> <span aria-hidden="true"> <span>〉</span>
-									</span>
-								</a></li>
+									<c:url var="next" value="sgList.go">
+										<c:param name="currentPage" value="${pi.currentPage +1 }" />
+									</c:url>
+									<li class="page-item"><a href="${next}" class="page-link"
+										aria-label="Next"> <span aria-hidden="true"> <span>〉</span>
+										</span>
+									</a></li>
 								</c:if>
 							</ul>
 						</nav>

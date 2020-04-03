@@ -74,7 +74,7 @@
 										name="sgTitle" required>
 									<div class="valid-feedback">Valid.</div>
 									<div class="invalid-feedback">공부방 제목 입역</div>
-									<input type="text" class="form-control" vlaue="니돈먹튀"
+									<input type="text" class="form-control" value="${loginUser.mId}"
 										name="sgWriter" hidden>
 									<!-- 방 개설 자 아이디 자동 입력 구간-->
 								</div>
