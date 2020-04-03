@@ -80,7 +80,7 @@
 	
 	
 	<select id="groupMember" resultMap="groupMemberResultSet">
-		SELECT M.M_NAME, M.M_ORGINAL_FILENAME
+		SELECT M.M_NAME, M.M_ORGINAL_FILENAME, M.M_NO
 		FROM GROUP_MEMBER GM
 		JOIN MEMBER M ON(M.M_NO = GM.GM_M_NO)
 		WHERE GM_SG_NO = #{sgNo} 

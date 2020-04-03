@@ -52,7 +52,7 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="subject">
-							<img src="${contextPath}/resources/img/project-5.png" class="rounded"
+							<img src="${contextPath}/resources/img/${sg.sgOrginalFileName}" class="rounded"
 								style="width: 350px; height: 360px;">
 						</div>
 					</div>
@@ -71,17 +71,29 @@
 							</li>
 						</ul>
 						<br>
+						<c:if test="${sessionScope.loginUser.mName eq sg.sgWriter}">
 						<button class="genric-btn info radius"
-							style="margin-bottom: 10px; width: 130px;">스터디 가입</button>
-						팀장일 경우 (스터디 시작) 버튼
+							style="margin-bottom: 10px; width: 130px;">스터디 가입</button> !작성자가 아니라 id를 비교
+						</c:if>
+						<c:if test="${sessionScope.loginUser.mName ne sg.sgWriter}">
+						<button class="genric-btn info radius"
+							style="margin-bottom: 10px; width: 130px;">스터디 시작</button> !작성자가 아니라 id를 비교
+						</c:if>
 						<div class="starRev"
 							style="width: 60px; display: inline; float: right;">
 							<span class="starR"></span>
 						</div>
 						<br>
+						<c:if test="${sessionScope.loginUser.mName eq sg.sgWriter}">
 						<button class="genric-btn danger radius btn-block"
 							style="width: 130px;" onclick="location.href='studyInsertSc.go'">스터디 수정</button>
 						팀장만 보이는 버튼 / 스터디 가입한 사람일 경우 (스터디 탈퇴) 버튼 나오기
+						</c:if>
+						<%-- <c:if test="${sessionScope.loginUser.mNo eq gm.memberList[0].mno}"> --%>
+						<button class="genric-btn danger radius btn-block"
+							style="width: 130px;" onclick="location.href='studyInsertSc.go'">스터디 탈퇴</button>
+						팀장만 보이는 버튼 / 스터디 가입한 사람일 경우 (스터디 탈퇴) 버튼 나오기
+						<%-- </c:if> --%>
 					</div>
 					<div class="col-md-4 mt-sm-20">
 						<label class="mb-20"
@@ -93,7 +105,7 @@
 							<ul class="checkuser">
 								<c:forEach var="g" items="${gm}">
 								<li><div class="checkuserdiv">
-										<img src="${contextPath}/resources/img/client_2.png" class="rounded-circle "
+										<img src="${contextPath}/resources/img/client/${g.memberList[0].mOrginalfilename}" class="rounded-circle "
 											style="height: 70px;" alt="Cinque Terre"><c:out value="${g.memberList[0].mName}"/>
 									</div></li>
 								</c:forEach>
