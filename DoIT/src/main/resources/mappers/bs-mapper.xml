@@ -51,6 +51,33 @@
  		AND		BSC_STATUS='Y'
     </select>
     
+    <insert id="insertReply" parameterType="BookShareReply">
+    	INSERT INTO BOOK_SHARE_COMMENTS VALUES(
+    		SEQ_BSCNO.NEXTVAL
+    		,#{bscBsNo}
+    		,#{bscWriter}
+    		,SYSDATE
+    		,#{bscCon}
+    		,DEFAULT
+    	)
+    </insert>
+    
+    <insert id="insertBookShare" parameterType="BookShareReply">
+		INSERT INTO BOOK_SHARE VALUES(
+			SEQ_BSNO.NEXTVAL
+			,#{bsLocation}
+			,#{bsCategory}
+			,#{bsTitle}
+			,#{bsCon}
+			,#{bsOriginalFileName}
+			,#{bsRenameFileName}
+			,#{bsWriter}
+			,'나눔중'
+			,SYSDATE
+			,NULL
+			,DEFAULT
+		)    
+    </insert>
     
     
 </mapper>

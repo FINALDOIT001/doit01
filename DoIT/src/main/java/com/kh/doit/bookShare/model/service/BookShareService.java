@@ -29,4 +29,19 @@ public interface BookShareService {
 	 */
 	ArrayList<BookShareReply> selectReplyList(int bsNo);
 
+	/**
+	 * 2-2. 댓글 달기 Kwon
+	 * @param r
+	 * @return
+	 */
+	int insertReply(BookShareReply r);
+
+	/**
+	 * 3. InsertBookShare Kwon
+	 * 2020.04.03 KH 
+	 * @param bs
+	 * @return
+	 */
+	int insertBookShare(BookShare bs);
+
 }

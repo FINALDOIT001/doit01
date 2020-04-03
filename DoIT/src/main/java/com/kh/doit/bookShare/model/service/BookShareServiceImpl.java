@@ -27,6 +27,14 @@ public class BookShareServiceImpl implements BookShareService {
 	public ArrayList<BookShareReply> selectReplyList(int bsNo) {
 		return bsDao.selectReplyList(bsNo);
 	}
+	@Override
+	public int insertReply(BookShareReply r) {
+		return bsDao.insertReply(r);
+	}
+	@Override
+	public int insertBookShare(BookShare bs) {
+		return bsDao.insertBookShare(bs);
+	}
 	
 	
 
